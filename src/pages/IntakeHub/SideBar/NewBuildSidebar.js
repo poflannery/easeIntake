@@ -1,45 +1,48 @@
 import { Chip, ListItem, Stack } from '@mui/material'
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setNewBuild } from '../../../redux/navigationReducer';
+import { setAdditional, setAdministrator, setBasicInformation, setCoveragesFive, setCoveragesFour, setCoveragesOne, setCoveragesThree, setCoveragesTwo, setDeadlines, setEligibility, setRates } from '../../../redux/newBuildSelectionReducer';
 
 export default function NewBuildSidebar() {
 
 // redux
-const store = useSelector(state => state.builds)
+const store = useSelector(state => state.newBuildList)
+const dispatch = useDispatch();
 
 // methods
 const handleListClickBasic = () => {
-  
+dispatch(setBasicInformation());
 }
 const handleListClickAdmin = () => {
-  
+dispatch(setAdministrator());
 }
 const handleListClickEligibility = () => {
-  
+dispatch(setEligibility());
 }
 const handleListClickCoveragesOne = () => {
-  
+dispatch(setCoveragesOne());
 }
 const handleListClickCoveragesTwo = () => {
-  
+dispatch(setCoveragesTwo());
 }
 const handleListClickCoveragesThree = () => {
-  
+dispatch(setCoveragesThree());
 }
 const handleListClickCoveragesFour = () => {
-  
+dispatch(setCoveragesFour());
 }
 const handleListClickCoveragesFive = () => {
-  
+dispatch(setCoveragesFive());
 }
 const handleListClickRates = () => {
-  
+dispatch(setRates());
 }
 const handleListClickDeadlines = () => {
-  
+dispatch(setDeadlines());
 }
 const handleListClickAdditional = () => {
-  
+dispatch(setAdditional());
 }
 
   return (

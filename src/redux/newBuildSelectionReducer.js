@@ -48,7 +48,8 @@ export const BuildSelection = createSlice({
 
 export const { 
     setBasicInformation,
-    setRenewal,
+    setAdministrator,
+    setEligibility,
     setCoveragesOne,
     setCoveragesTwo,
     setCoveragesThree,

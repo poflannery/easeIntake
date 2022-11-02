@@ -8,13 +8,14 @@ import NewBuildSidebar from './SideBar/NewBuildSidebar';
 import { useSelector } from 'react-redux';
 import RenewalSidebar from './SideBar/RenewalSidebar';
 import BasicInformation from './NewBuildData/BasicInformation';
+import Administrator from './NewBuildData/Administrator';
 
 
 export default function IntakeHub() {
 
 // redux
 const store = useSelector(state => state.navigation);
-
+const storeBuildList = useSelector(state => state.newBuildList)
 
   return (
     <div className=' intakeHub__layout grid'>
@@ -33,7 +34,8 @@ const store = useSelector(state => state.navigation);
       </div>
       <div className='mainContent__Intake__layout grid'>
           <div className='mainContent__container'>
-            <BasicInformation />
+            { storeBuildList.name === 'Basic Information' ? <BasicInformation /> : 
+              storeBuildList.name === 'Administrator' ? <Administrator /> : null}
           </div>
         </div>
     </div>

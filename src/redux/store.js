@@ -21,7 +21,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
   navigation: Navigation,
-  builds: BuildSelection
+  newBuildList: BuildSelection
 
 })
 
