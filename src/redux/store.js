@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import Navigation from "./navigationReducer";
 import { persistReducer } from "redux-persist";
 import sessionStorage from "redux-persist/lib/storage/session";
-import BuildSelection from "./buildSelectionReducer";
+import BuildSelection from "./newBuildSelectionReducer";
 // import {
 //    FLUSH,
 //    REHYDRATE,
