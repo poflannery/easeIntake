@@ -1,0 +1,35 @@
+// containers
+@import './app.scss';
+@import './_header.scss';
+@import './_sidebar.scss';
+@import './_authentication.scss';
+
+//Components
+@import './_CustomComponents.scss';
+@import './ComponentPages/IntakeHub.scss';
+
+
+// fonts
+@import './_fonts.scss';
+
+
+
+// MUI
+@import './_buttons.scss';
+@import './_inputs.scss';
+
+
+
+* {
+  box-sizing: border-box;
+}
+body, html {
+    padding: 0px;
+    margin: 0px;
+}
+::-webkit-scrollbar{
+  width: 0px
+}
+::-webkit-scrollbar-track{
+  background: transparent;
+}

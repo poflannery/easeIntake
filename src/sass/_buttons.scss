@@ -1,0 +1,33 @@
+.MuiButton-contained{
+    background-color: #4384f5 !important;
+    text-transform: capitalize !important;
+    font-family: 'Source Sans Pro 600' !important;
+    font-size: 0.9rem !important;
+    box-shadow: none !important;
+    padding: 0.3rem 1.2rem !important;
+    border: 1px solid transparent !important;
+    &:hover{
+        background-color: #3870d1 ;
+    }
+    &:focus{
+        border: 1px solid #3870d1;
+    }
+}
+.MuiButton-outlined{
+    padding: 0.1rem 1.2rem !important;
+    text-transform: none !important;
+    font-family: 'Source Sans Pro 600' !important;
+    font-size: 0.95rem !important;
+    border: 1px solid #4384f5 !important;
+    &:hover{
+        background-color: rgba(0,0,0,0.1);
+    }
+    &:focus{
+        border: 1px solid #3870d1;
+    }
+}
+.disabled__button{
+    background: rgb(196, 196, 196) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
