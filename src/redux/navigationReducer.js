@@ -7,17 +7,23 @@ export const Navigation = createSlice({
         selected: 0
     },
     reducers: {
-        setHome: (state) => {
-            state.location = 'Home'
+        setNewBuild: (state) => {
+            state.location = 'New Build'
         },
-        setTickets: (state) => {
-            state.location = 'Tickets'
+        setRenewal: (state) => {
+            state.location = 'Renewal'
         },
-        setUsers: (state) => {
-            state.location = 'Users'
+        setMySaved: (state) => {
+            state.location = 'My Saved'
         },
-        setReports: (state) => {
-            state.location = 'Reports'
+        setResources: (state) => {
+            state.location = 'Resources'
+        },
+        setQueue: (state) => {
+            state.location = 'Queue'
+        },
+        setUploadDocs: (state) => {
+            state.location = 'Upload Docs'
         },
         setSelectedNavigation: (state,action) => {
             state.selected = action.payload
@@ -26,10 +32,12 @@ export const Navigation = createSlice({
 });
 
 export const { 
-    setHome,
-    setReports,
-    setTickets,
-    setUsers,
+    setNewBuild,
+    setRenewal,
+    setMySaved,
+    setResources,
+    setQueue,
+    setUploadDocs,
     setSelectedNavigation } = Navigation.actions
 
 export default Navigation.reducer
