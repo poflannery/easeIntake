@@ -14,50 +14,64 @@ export default function IntakeHub() {
       </div>
       <div className='navigation__left grid'>
         <div className='navigation__left__title'>
-          <h3>Tickets</h3>
+          <h3>{`{Type}`}</h3>
           <Button variant='contained' >Submit Build</Button>
         </div>
         <div className='navigation__left__content'>
             <Stack direction='column' spacing={0}className='navigation__left__content-list'>
+              <ListItem className='navigation__left__content-list-header'>
+                <p4 is="custom">The Group</p4>
+              </ListItem>
               <ListItem className='navigation__left__content-list-item' >
-                <p2 is="custom">All Tickets</p2>
+                <p2 is="custom">Basic Information</p2>
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">Tickets to Handle</p2>
-                <Chip variant='filled' size='small' label={''} />
-              </ListItem>
-              <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">My Open Tickets</p2>
+                <p2 is="custom">Administrator</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
               <ListItem className='navigation__left__content-list-header'>
-                <p4 is="custom">My Views</p4>
+                <p4 is="custom">Eligibility Details</p4>
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">My Tickets in last 7 days</p2>
+                <p2 is="custom">General</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
               <ListItem className='navigation__left__content-list-header'>
-                <p4 is="custom">Statuses</p4>
+                <p4 is="custom">Coverages</p4>
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">Open</p2>
+                <p2 is="custom">Medical/Dental/Vision</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">Pending</p2>
+                <p2 is="custom">Life/ADD</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">On hold</p2>
+                <p2 is="custom">STD/LTD</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">Solved</p2>
+                <p2 is="custom">Financial</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
               <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
-                <p2 is="custom">Closed</p2>
+                <p2 is="custom">Other</p2>
+                <Chip variant='filled' size='small' label={''} />
+              </ListItem>
+              <ListItem className='navigation__left__content-list-header'>
+                <p4 is="custom">Additional Details</p4>
+              </ListItem>
+              <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
+                <p2 is="custom">Rates</p2>
+                <Chip variant='filled' size='small' label={''} />
+              </ListItem>
+              <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
+                <p2 is="custom">Deadlines</p2>
+                <Chip variant='filled' size='small' label={''} />
+              </ListItem>
+              <ListItem className='navigation__left__content-list-item navigation__left__chipped' >
+                <p2 is="custom">Additional Notes</p2>
                 <Chip variant='filled' size='small' label={''} />
               </ListItem>
             </Stack>
