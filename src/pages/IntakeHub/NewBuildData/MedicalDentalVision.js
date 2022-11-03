@@ -4,55 +4,78 @@ import React from 'react'
 export default function MedicalDentalVision() {
   return (
     <>
-          <p3 is="custom">Group Name</p3>
+          <p3 is="custom">Medical</p3>
+          <div>
+          <TextField
+          variant='outlined'
+          size='small'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Number of Plans...'
+          />
+          <TextField
+          variant='outlined'
+          size='small'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Carriers...'
+          />
+          </div>
+          <p3 is="custom">Additional Medical Details</p3>
           <TextField
           variant='outlined'
           size='small'
           className='sidebar__left_search__input' 
-          placeholder='Name...'
+          placeholder='Describe additional details about the plans or unique circumstances...'
+          multiline
+          rows={2}
           />
-          <p3 is="custom">City</p3>
+          <p3 is="custom">Dental</p3>
           <div>
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='City...'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Number of Plans...'
           />
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='State...'
-          />
-          <TextField
-          variant='outlined'
-          size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='Zip Code...'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Carriers...'
           />
           </div>
-          <p3 is="custom">Data Entry</p3>
+          <p3 is="custom">Additional Dental Details</p3>
+          <TextField
+          variant='outlined'
+          size='small'
+          className='sidebar__left_search__input' 
+          placeholder='Describe additional details about the plans or unique circumstances...'
+          multiline
+          rows={2}
+          />
+          <p3 is="custom">Vision</p3>
           <div>
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='SIC Code...'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Number of Plans...'
           />
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='Federal Tax ID...'
-          />
-          <TextField
-          variant='outlined'
-          size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='Website...'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Carriers...'
           />
           </div>
+          <p3 is="custom">Additional Vision Details</p3>
+          <TextField
+          variant='outlined'
+          size='small'
+          className='sidebar__left_search__input' 
+          placeholder='Describe additional details about the plans or unique circumstances...'
+          multiline
+          rows={2}
+          />
           <Button variant='contained' sx={{marginTop: '1rem'}}>Check Required Fields</Button> {/* Check Required fields, then save data button appears*/}
     </>
   )

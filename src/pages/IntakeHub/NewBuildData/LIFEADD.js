@@ -4,55 +4,54 @@ import React from 'react'
 export default function LIFEADD() {
   return (
     <>
-          <p3 is="custom">Group Name</p3>
+          <p3 is="custom">Basic Life and AD&D</p3>
+          <div>
+          <TextField
+          variant='outlined'
+          size='small'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Number of Plans...'
+          />
+          <TextField
+          variant='outlined'
+          size='small'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Carriers...'
+          />
+          </div>
+          <p3 is="custom">Additional Basic Life/AD&D Details</p3>
           <TextField
           variant='outlined'
           size='small'
           className='sidebar__left_search__input' 
-          placeholder='Name...'
+          placeholder='Describe additional details about the plans or unique circumstances...'
+          multiline
+          rows={2}
           />
-          <p3 is="custom">City</p3>
+          <p3 is="custom">Voluntary Life and AD&D</p3>
           <div>
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='City...'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Number of Plans...'
           />
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='State...'
-          />
-          <TextField
-          variant='outlined'
-          size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='Zip Code...'
+          className='sidebar__left_search__input input__narrow' 
+          placeholder='Carriers...'
           />
           </div>
-          <p3 is="custom">Data Entry</p3>
-          <div>
+          <p3 is="custom">Additional Voluntary Life/AD&D Details</p3>
           <TextField
           variant='outlined'
           size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='SIC Code...'
+          className='sidebar__left_search__input' 
+          placeholder='Describe additional details about the plans or unique circumstances...'
+          multiline
+          rows={2}
           />
-          <TextField
-          variant='outlined'
-          size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='Federal Tax ID...'
-          />
-          <TextField
-          variant='outlined'
-          size='small'
-          className='sidebar__left_search__input input__narrower' 
-          placeholder='Website...'
-          />
-          </div>
           <Button variant='contained' sx={{marginTop: '1rem'}}>Check Required Fields</Button> {/* Check Required fields, then save data button appears*/}
     </>
   )
