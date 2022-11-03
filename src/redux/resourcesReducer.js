@@ -3,41 +3,36 @@ import { createSlice } from "@reduxjs/toolkit";
 export const Resources = createSlice({
     name: 'Resources Sections',
     initialState: {
-        name: '',
-        selected: 0
+        name: ''
     },
     reducers: {
-        setProcedures: (state) => {
+        setProceduresRedux: (state) => {
             state.name = 'Procedures'
         },
-        setCarrierConnectionsGuides: (state) => {
+        setCarrierConnectionsGuidesRedux: (state) => {
             state.name = 'Carrier Connections Guides'
         },
-        setHelpfulPackets: (state) => {
+        setHelpfulPacketsRedux: (state) => {
             state.name = 'Helpful Packets'
         },
-        setDownloads: (state) => {
+        setDownloadsRedux: (state) => {
             state.name = 'Downloads'
         },
-        setPayroll: (state) => {
+        setPayrollRedux: (state) => {
             state.name = 'Payroll'
         },
-        setOther: (state) => {
+        setOtherRedux: (state) => {
             state.name = 'Other'
-        },
-        setSelectedBuildSelectionResources: (state,action) => {
-            state.selected = action.payload
         }
     }
 });
 
 export const { 
-    setProcedures,
-    setCarrierConnectionsGuides,
-    setHelpfulPackets,
-    setDownloads,
-    setPayroll,
-    setOther,
-    setSelectedBuildSelectionResources } = Resources.actions
+    setProceduresRedux,
+    setCarrierConnectionsGuidesRedux,
+    setHelpfulPacketsRedux,
+    setDownloadsRedux,
+    setPayrollRedux,
+    setOtherRedux } = Resources.actions
 
 export default Resources.reducer

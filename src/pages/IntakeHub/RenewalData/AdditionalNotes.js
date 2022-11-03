@@ -4,7 +4,7 @@ import React from 'react'
 export default function AdditionalNotesRenewal() {
   return (
     <>
-          <p3 is="custom">Enter Any Additional Details Here</p3>
+          <p3 is="custom">Enter any additional details about the renewal here</p3>
           <TextField
           variant='outlined'
           size='small'

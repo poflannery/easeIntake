@@ -4,12 +4,12 @@ import React from 'react'
 export default function EligibilityRenewal() {
   return (
     <>
-          <p3 is="custom">Enter Any Additional Details Here</p3>
+          <p3 is="custom">Changes to eligibility (classes, rates, etc.)</p3>
           <TextField
           variant='outlined'
           size='small'
           className='sidebar__left_search__input' 
-          placeholder='Details'
+          placeholder='Type out details...'
           multiline
           rows={4}
           />

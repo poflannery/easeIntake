@@ -27,8 +27,8 @@ const persistConfig = {
 
 const reducer = combineReducers({
   navigation: Navigation,
-  newBuildList: NewBuildSelection,
-  renewalList: RenewalSelection,
+  newBuildSidebar: NewBuildSelection,
+  renewalSidebar: RenewalSelection,
   resources: Resources,
   newBuildValues: NewBuildValues,
   global: Global

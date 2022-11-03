@@ -1,7 +1,7 @@
 import { Chip, ListItem, Stack } from '@mui/material'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setCarrierConnectionsGuides, setDownloads, setHelpfulPackets, setOther, setPayroll, setProcedures } from '../../../redux/resourcesReducer';
+import { setCarrierConnectionsGuidesRedux, setDownloadsRedux, setHelpfulPacketsRedux, setOtherRedux, setPayrollRedux, setProceduresRedux } from '../../../redux/resourcesReducer';
 
 export default function ResourcesSidebar() {
 
@@ -14,22 +14,22 @@ const store = useSelector(state => state.resources)
 
 // methods
 const handleListClickProcedures = () => {
-  dispatch(setProcedures());
+  dispatch(setProceduresRedux());
 }
 const handleListClickCarrierConnectionsGuides = () => {
-  dispatch(setCarrierConnectionsGuides());
+  dispatch(setCarrierConnectionsGuidesRedux());
 }
 const handleListClickHelpfulPackets = () => {
-  dispatch(setHelpfulPackets());
+  dispatch(setHelpfulPacketsRedux());
 }
 const handleListClickDownloads = () => {
-  dispatch(setDownloads());
+  dispatch(setDownloadsRedux());
 }
 const handleListClickPayroll = () => {
-  dispatch(setPayroll());
+  dispatch(setPayrollRedux());
 }
 const handleListClickOther = () => {
-  dispatch(setOther());
+  dispatch(setOtherRedux());
 }
 
 

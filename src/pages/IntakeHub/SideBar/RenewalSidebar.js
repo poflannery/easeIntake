@@ -7,7 +7,7 @@ export default function RenewalSidebar() {
 
 // redux
 const dispatch = useDispatch();
-const store = useSelector(state => state.renewalList)
+const store = useSelector(state => state.renewalSidebar)
 
 // Methods
 const handleListClickBasic = () => {

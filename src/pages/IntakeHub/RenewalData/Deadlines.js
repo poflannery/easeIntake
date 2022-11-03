@@ -9,14 +9,14 @@ export default function DeadlinesRenewal() {
           variant='outlined'
           size='small'
           className='sidebar__left_search__input' 
-          placeholder='Enter Date'
+          placeholder='Enter Date...'
           />
           <p3 is="custom">Open Enrollment Start and End Dates</p3>
           <TextField
           variant='outlined'
           size='small'
           className='sidebar__left_search__input' 
-          placeholder='City...'
+          placeholder='Enter Dates...'
           />
           <Button variant='contained' sx={{marginTop: '1rem'}}>Save Information</Button> {/* Check Required fields, then save data button appears*/}
     </>

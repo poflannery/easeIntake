@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setNoticeText } from '../../../redux/globalReducer';
+import { setNoticeBarText } from '../../../redux/globalReducer';
 import { setadminEmail, setadminName } from '../../../redux/NewBuildValuesReducer';
 
 export default function Administrator() {
@@ -27,9 +27,9 @@ const handleSaveInformation = () => {
   },1000)
 }
 const savedNotice = () => {
-  dispatch(setNoticeText('Information Saved!'));
+  dispatch(setNoticeBarText('Information Saved!'));
   setTimeout(() => {
-    dispatch(setNoticeText('Notifications will appear here when needed. Thank you!'));
+    dispatch(setNoticeBarText('Notifications will appear here when needed. Thank you!'));
   },3000)
 }
 

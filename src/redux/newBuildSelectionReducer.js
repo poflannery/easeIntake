@@ -4,60 +4,55 @@ export const NewBuildSelection = createSlice({
     name: 'Build Sidebar selection to populate fields',
     initialState: {
         name: '',
-        selected: 0
     },
     reducers: {
-        setBasicInformation: (state) => {
+        setBasicInformationNewBuild: (state) => {
             state.name = 'Basic Information'
         },
-        setAdministrator: (state) => {
+        setAdministratorNewBuild: (state) => {
             state.name = 'Administrator'
         },
-        setEligibility: (state) => {
+        setEligibilityNewBuild: (state) => {
             state.name = 'Eligibility'
         },
-        setCoveragesOne: (state) => {
+        setCoveragesOneNewBuild: (state) => {
             state.name = 'CoveragesOne'
         },
-        setCoveragesTwo: (state) => {
+        setCoveragesTwoNewBuild: (state) => {
             state.name = 'CoveragesTwo'
         },
-        setCoveragesThree: (state) => {
+        setCoveragesThreeNewBuild: (state) => {
             state.name = 'CoveragesThree'
         },
-        setCoveragesFour: (state) => {
+        setCoveragesFourNewBuild: (state) => {
             state.name = 'CoveragesFour'
         },
-        setCoveragesFive: (state) => {
+        setCoveragesFiveNewBuild: (state) => {
             state.name = 'CoveragesFive'
         },
-        setRates: (state) => {
+        setRatesNewBuild: (state) => {
             state.name = 'Rates'
         },
-        setDeadlines: (state) => {
+        setDeadlinesNewBuild: (state) => {
             state.name = 'Deadlines'
         },
-        setAdditional: (state) => {
+        setAdditionalNewBuild: (state) => {
             state.name = 'Additional'
-        },
-        setSelectedBuildSelection: (state,action) => {
-            state.selected = action.payload
         }
     }
 });
 
 export const { 
-    setBasicInformation,
-    setAdministrator,
-    setEligibility,
-    setCoveragesOne,
-    setCoveragesTwo,
-    setCoveragesThree,
-    setCoveragesFour,
-    setCoveragesFive,
-    setRates,
-    setDeadlines,
-    setAdditional,
-    setSelectedBuildSelection } = NewBuildSelection.actions
+    setBasicInformationNewBuild,
+    setAdministratorNewBuild,
+    setEligibilityNewBuild,
+    setCoveragesOneNewBuild,
+    setCoveragesTwoNewBuild,
+    setCoveragesThreeNewBuild,
+    setCoveragesFourNewBuild,
+    setCoveragesFiveNewBuild,
+    setRatesNewBuild,
+    setDeadlinesNewBuild,
+    setAdditionalNewBuild } = NewBuildSelection.actions
 
 export default NewBuildSelection.reducer

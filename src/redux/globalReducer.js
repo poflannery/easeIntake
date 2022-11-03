@@ -6,13 +6,13 @@ export const Global = createSlice({
         text: 'Notifications will appear here when needed. Thank you!'
     },
     reducers: {
-        setNoticeText: (state,action) => {
+        setNoticeBarText: (state,action) => {
             state.text = action.payload
         }
     }
 });
 
 export const { 
-    setNoticeText } = Global.actions
+    setNoticeBarText } = Global.actions
 
 export default Global.reducer

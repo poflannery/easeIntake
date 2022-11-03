@@ -1,48 +1,48 @@
 import { Chip, ListItem, Stack } from '@mui/material'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setNewBuild } from '../../../redux/navigationReducer';
-import { setAdditional, setAdministrator, setBasicInformation, setCoveragesFive, setCoveragesFour, setCoveragesOne, setCoveragesThree, setCoveragesTwo, setDeadlines, setEligibility, setRates } from '../../../redux/newBuildSelectionReducer';
+import { setNewBuildNavigation } from '../../../redux/navigationReducer';
+import { setAdditionalNewBuild, setAdministratorNewBuild, setBasicInformationNewBuild, setCoveragesFiveNewBuild, setCoveragesFourNewBuild, setCoveragesOneNewBuild, setCoveragesThreeNewBuild, setCoveragesTwoNewBuild, setDeadlinesNewBuild, setEligibilityNewBuild, setRatesNewBuild } from '../../../redux/newBuildSelectionReducer';
 
 export default function NewBuildSidebar() {
 
 // redux
-const store = useSelector(state => state.newBuildList)
+const store = useSelector(state => state.newBuildSidebar)
 const dispatch = useDispatch();
 
 // methods
 const handleListClickBasic = () => {
-dispatch(setBasicInformation());
+dispatch(setBasicInformationNewBuild());
 }
 const handleListClickAdmin = () => {
-dispatch(setAdministrator());
+dispatch(setAdministratorNewBuild());
 }
 const handleListClickEligibility = () => {
-dispatch(setEligibility());
+dispatch(setEligibilityNewBuild());
 }
 const handleListClickCoveragesOne = () => {
-dispatch(setCoveragesOne());
+dispatch(setCoveragesOneNewBuild());
 }
 const handleListClickCoveragesTwo = () => {
-dispatch(setCoveragesTwo());
+dispatch(setCoveragesTwoNewBuild());
 }
 const handleListClickCoveragesThree = () => {
-dispatch(setCoveragesThree());
+dispatch(setCoveragesThreeNewBuild());
 }
 const handleListClickCoveragesFour = () => {
-dispatch(setCoveragesFour());
+dispatch(setCoveragesFourNewBuild());
 }
 const handleListClickCoveragesFive = () => {
-dispatch(setCoveragesFive());
+dispatch(setCoveragesFiveNewBuild());
 }
 const handleListClickRates = () => {
-dispatch(setRates());
+dispatch(setRatesNewBuild());
 }
 const handleListClickDeadlines = () => {
-dispatch(setDeadlines());
+dispatch(setDeadlinesNewBuild());
 }
 const handleListClickAdditional = () => {
-dispatch(setAdditional());
+dispatch(setAdditionalNewBuild());
 }
 
   return (

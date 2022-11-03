@@ -7,7 +7,7 @@ import React, {useState} from 'react'
 
 // Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
-import { setNoticeText } from '../../../redux/globalReducer';
+import { setNoticeBarText } from '../../../redux/globalReducer';
 import { setgroupName,setcity,setstate,setzip,setsicCode,setfein,setwebsite } from '../../../redux/NewBuildValuesReducer';
 
 
@@ -60,9 +60,9 @@ const handleSaveInformation = () => {
   },1000)
 }
 const savedNotice = () => {
-  dispatch(setNoticeText('Information Saved!'));
+  dispatch(setNoticeBarText('Information Saved!'));
   setTimeout(() => {
-    dispatch(setNoticeText('Notifications will appear here when needed. Thank you!'));
+    dispatch(setNoticeBarText('Notifications will appear here when needed. Thank you!'));
   },3000)
 }
 

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const RenewalSelection = createSlice({
-    name: 'Renewal Sections',
+    name: 'Renewal Pages',
     initialState: {
         name: '',
         selected: 0

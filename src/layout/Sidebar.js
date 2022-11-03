@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 // resource imports
 import { HD } from '../images/images';
-import { setMySaved, setNewBuild, setQueue, setRenewal, setResources, setUploadDocs } from '../redux/navigationReducer';
+import { setMySavedNavigation, setNewBuildNavigation, setQueueNavigation, setRenewalNavigation, setResourcesNavigation, setUploadDocsNavigation } from '../redux/navigationReducer';
 
 export default function Sidebar() {
 
@@ -26,22 +26,22 @@ const store = useSelector(state => state.navigation)
 
 // methods
 const handleClickNewBuild = () => {
-dispatch(setNewBuild())
+dispatch(setNewBuildNavigation())
 }
 const handleClickRenewal = () => {
-dispatch(setRenewal())  
+dispatch(setRenewalNavigation())  
 }
 const handleClickMySaved = () => {
-dispatch(setMySaved())  
+dispatch(setMySavedNavigation())  
 }
 const handleClickResources = () => {
-dispatch(setResources())  
+dispatch(setResourcesNavigation())  
 }
 const handleClickQueue = () => {
-dispatch(setQueue())  
+dispatch(setQueueNavigation())  
 }
 const handleClickUploadDocs = () => {
-dispatch(setUploadDocs())  
+dispatch(setUploadDocsNavigation())  
 }
 
 

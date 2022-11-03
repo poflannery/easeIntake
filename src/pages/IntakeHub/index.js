@@ -33,7 +33,6 @@ import AdditionalNotesRenewal from './RenewalData/AdditionalNotes';
 import EligibilityRenewal from './RenewalData/Eligibility';
 import CoveragesOneRenewal from './RenewalData/CoveragesOne';
 import CoveragesTwoRenewal from './RenewalData/CoveragesTwo';
-import MySaved from './UploadDocsData/UploadDocs';
 import Queue from './QueueData/Queue';
 import UploadDocs from './UploadDocsData/UploadDocs';
 import Procedures from './ResourcesData/Procedures';
@@ -42,6 +41,7 @@ import HelpfulPackets from './ResourcesData/HelpfulPackets';
 import Downloads from './ResourcesData/Downloads';
 import Payroll from './ResourcesData/Payroll';
 import OtherResources from './ResourcesData/Other';
+import MySaved from './MySavedData/MySaved';
 
 
 export default function IntakeHub() {
@@ -49,8 +49,8 @@ export default function IntakeHub() {
 // redux
 const store = useSelector(state => state.navigation);
 const globalStore = useSelector(state => state.global)
-const storeNewBuildList = useSelector(state => state.newBuildList)
-const storeRenewalList = useSelector(state => state.renewalList)
+const storenewBuildSidebar = useSelector(state => state.newBuildSidebar)
+const storerenewalSidebar = useSelector(state => state.renewalSidebar)
 const storeResourceList = useSelector(state => state.resources)
 
   return (
@@ -76,29 +76,29 @@ const storeResourceList = useSelector(state => state.resources)
           <div className='mainContent__container'>
             { store.location === 'New Build' &&
             <>
-              { storeNewBuildList.name === 'Basic Information' ? <BasicInformation /> : 
-                storeNewBuildList.name === 'Administrator' ? <Administrator /> :
-                storeNewBuildList.name === 'Eligibility' ? <Eligibility /> :
-                storeNewBuildList.name === 'CoveragesOne' ? <MedicalDentalVision /> :
-                storeNewBuildList.name === 'CoveragesTwo' ? <LIFEADD /> :
-                storeNewBuildList.name === 'CoveragesThree' ? <STDLTD /> :
-                storeNewBuildList.name === 'CoveragesFour' ? <Financial /> :
-                storeNewBuildList.name === 'CoveragesFive' ? <Other /> :
-                storeNewBuildList.name === 'Rates' ? <Rates /> :
-                storeNewBuildList.name === 'Deadlines' ? <Deadlines /> :
-                storeNewBuildList.name === 'Additional' ? <AdditionalNotes /> : null}
+              { storenewBuildSidebar.name === 'Basic Information' ? <BasicInformation /> : 
+                storenewBuildSidebar.name === 'Administrator' ? <Administrator /> :
+                storenewBuildSidebar.name === 'Eligibility' ? <Eligibility /> :
+                storenewBuildSidebar.name === 'CoveragesOne' ? <MedicalDentalVision /> :
+                storenewBuildSidebar.name === 'CoveragesTwo' ? <LIFEADD /> :
+                storenewBuildSidebar.name === 'CoveragesThree' ? <STDLTD /> :
+                storenewBuildSidebar.name === 'CoveragesFour' ? <Financial /> :
+                storenewBuildSidebar.name === 'CoveragesFive' ? <Other /> :
+                storenewBuildSidebar.name === 'Rates' ? <Rates /> :
+                storenewBuildSidebar.name === 'Deadlines' ? <Deadlines /> :
+                storenewBuildSidebar.name === 'Additional' ? <AdditionalNotes /> : null}
             </>
             }
             { store.location === 'Renewal' &&
             <>
-              { storeRenewalList.name === 'Basic Information' ? <BasicInformationRenewal /> :
-                storeRenewalList.name === 'Administrator' ? <AdministratorRenewal /> :
-                storeRenewalList.name === 'Eligibility' ? <EligibilityRenewal /> :
-                storeRenewalList.name === 'CoveragesOne' ? <CoveragesOneRenewal /> :
-                storeRenewalList.name === 'CoveragesTwo' ? <CoveragesTwoRenewal /> :
-                storeRenewalList.name === 'Rates' ? <RatesRenewal /> :
-                storeRenewalList.name === 'Deadlines' ? <DeadlinesRenewal /> :
-                storeRenewalList.name === 'Additional' ? <AdditionalNotesRenewal /> : null }
+              { storerenewalSidebar.name === 'Basic Information' ? <BasicInformationRenewal /> :
+                storerenewalSidebar.name === 'Administrator' ? <AdministratorRenewal /> :
+                storerenewalSidebar.name === 'Eligibility' ? <EligibilityRenewal /> :
+                storerenewalSidebar.name === 'CoveragesOne' ? <CoveragesOneRenewal /> :
+                storerenewalSidebar.name === 'CoveragesTwo' ? <CoveragesTwoRenewal /> :
+                storerenewalSidebar.name === 'Rates' ? <RatesRenewal /> :
+                storerenewalSidebar.name === 'Deadlines' ? <DeadlinesRenewal /> :
+                storerenewalSidebar.name === 'Additional' ? <AdditionalNotesRenewal /> : null }
             </>
             }
             { store.location === 'My Saved' &&
