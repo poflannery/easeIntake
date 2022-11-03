@@ -7,6 +7,7 @@ import RenewalSelection from "./renewalSelectionReducer";
 import Resources from "./resourcesReducer";
 import NewBuildValues from "./NewBuildValuesReducer";
 import Global from "./globalReducer";
+import AdminNav from "./adminNavReducer";
 
 
 // import {
@@ -27,6 +28,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
   navigation: Navigation,
+  adminNavigation: AdminNav,
   newBuildSidebar: NewBuildSelection,
   renewalSidebar: RenewalSelection,
   resources: Resources,

@@ -1,0 +1,182 @@
+.ticket__grid{
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+    "noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar"
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+    "leftSide leftSide leftSide mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent "
+}
+.noticeBar__container{
+    grid-area: noticeBar;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbbd04;
+    color: #424d57;
+}
+.sidebar__left__container{
+    grid-area: leftSide;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: #f3f7f9;
+    color: #424d57;
+    border-right: 1px solid rgba(0,0,0,0.1);
+    .sidebar__left__title{
+        grid-area: 1/1/2/17;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 1rem;
+        letter-spacing: 1px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .sidebar__left__search{
+        grid-area: 2/1/3/17;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .sidebar__left__content{
+        grid-area: 3/1/17/17;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        .sidebar__left__content-list{
+            width: 100%;
+            height: auto;
+            padding: 1.5rem 1.5rem 10px;
+        }
+        .sidebar__left__content-list-header{
+            width: 100%;
+            padding: 1.5rem 0.5rem 0.5rem;
+            text-transform: uppercase;
+            color: rgba(0,0,0,0.4);
+        }
+        .sidebar__left__content-list-header-selected{
+            color: #4384f5;
+            font-weight: 600;
+        }
+        .sidebar__left__content-list-item{
+            width: 100%;
+            padding: 0.75rem 0.5rem;
+            cursor: pointer;
+            &:hover{
+                color: #4384f5;
+            }
+        }
+        .sidebar__left__content-list-item-selected{
+            color: #4384f5;
+            font-weight: 600;
+        }
+        .chipped{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+}
+.mainContent__container{
+    grid-area: mainContent;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    .mainContent__title{
+        grid-area: 1/1/2/17;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        h3{
+            font-weight: 400;
+        }
+        .mainContent__title__icon{
+            position: absolute;
+            right: 1rem;
+        }
+    }
+    .mainContent__filter{
+        grid-area: 2/1/3/17;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        padding: 0.5rem 1rem;
+    }
+    .mainContent__content{
+        grid-area: 3/1/17/17;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        .mainContent__total__tickets__bar{
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0rem 1rem;
+            color: rgba(0,0,0,0.7);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        .mainContent__ticket__totals{
+            width: 100%;
+            max-height: calc(100% - 2rem);
+        }
+    }
+}
+.table__font__css{
+    text-transform: uppercase !important;
+    color: rgba(0,0,0,0.5);
+}
+.total__table__row{
+    padding: 0rem;
+    &:hover{
+        background-color: rgba(0,0,0,0.1);
+    }
+}
+.mainContent__ticket__totals__requestor{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    icon{
+        width: 30px;
+        height: 30px;
+        background-color:lightsalmon;
+        border-radius: 50%;
+        margin: 0rem 0.5rem;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+.MuiTableCell-root{
+    padding: 0.5rem !important;
+}
+.MuiTableCell-head{
+    padding: 0rem 0.5rem !important;
+}
+.MuiTableRow-head{
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.5);
+}

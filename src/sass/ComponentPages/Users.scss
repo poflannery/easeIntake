@@ -1,0 +1,81 @@
+.users__container{
+    width: 100%;
+    height: 100%;
+    grid-template-areas: 
+    "noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar noticeBar"
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+    "mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent mainContent rightSide rightSide rightSide rightSide "
+}
+.users__title{
+    grid-area: title;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    h2{
+        font-weight: 400;
+    }
+}
+.sidebar__right__container{
+    grid-area: rightSide;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    background-color: #ffffff;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    .sidebar__right__container__title{
+        grid-area: 1/1/2/17;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0rem 1rem;
+        color: #424d57;
+    }
+}
+.mainContent__left{
+    grid-area: mainContent;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    .mainContent__left__title{
+        grid-area: 1/1/2/17;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0rem 1rem;
+        .mainContent__left__title__category{
+            height: 100%;
+            width: auto;
+            border-bottom: 5px solid #4384f5;
+        }
+    }
+    .mainContent__left__content{
+        grid-area: 2/1/15/17;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}

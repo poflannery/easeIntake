@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router'
 // Router Imports
 
 
-export default function Authentication() {
+export default function Homepage() {
 
   // router
   const navigate = useNavigate();
@@ -47,7 +47,7 @@ export default function Authentication() {
             <div className='div_column'>
               <h1>Administrator Login</h1>
               <p1 is='custom'>Access has been restricted to admin accounts only.</p1>
-              <Button variant='contained'>Admin Login</Button>
+              <Button variant='contained' onClick={() => navigate('/login')}>Admin Login</Button>
             </div>
           </div>
         </div>

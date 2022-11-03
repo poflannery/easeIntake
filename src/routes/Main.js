@@ -1,7 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
+import AdminLayout from "../layout/AdminLayout";
 import AuthenticationLayout from "../layout/AuthenticationLayout";
 import SimpleLayout from "../layout/MainLayout";
-import Authentication from "../pages/Homepage";
+import Authentication from "../pages/AdminDashboard/Authentication";
+import TicketLanding from "../pages/AdminDashboard/TicketLanding";
+import Users from "../pages/AdminDashboard/Users";
+import Homepage from "../pages/Homepage";
 import IntakeHub from "../pages/IntakeHub";
 import TicketSupportDesk from "../pages/TicketSupportDesk";
 
@@ -23,12 +27,32 @@ const routes = createBrowserRouter([
         ]
     },
     {
+        path: '/admin',
+        element: <AdminLayout />,
+        children: [
+            {
+                path: '/admin/dashboard',
+                element: <TicketLanding />,
+                loading: async() => {
+                    return sleep(400)
+                }
+            },
+            {
+                path: '/admin/users',
+                element: <Users />,
+                loading: async() => {
+                    return sleep(400)
+                }
+            },
+        ]
+    },
+    {
         path: '/',
         element: <AuthenticationLayout />,
         children: [
             {
                 path: '/',
-                element: <Authentication />,
+                element: <Homepage />,
                 loading: async() => {
                     return sleep(400)
                 }
@@ -39,7 +63,15 @@ const routes = createBrowserRouter([
                 loading: async() => {
                     return sleep(400)
                 }
+            },
+            {
+                path: '/login',
+                element: <Authentication />,
+                loading: async() => {
+                    return sleep(400)
+                }
             }
+
         ]
     }
 ]);
