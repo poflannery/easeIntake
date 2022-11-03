@@ -4,6 +4,7 @@ import { persistReducer } from "redux-persist";
 import sessionStorage from "redux-persist/lib/storage/session";
 import NewBuildSelection from "./newBuildSelectionReducer";
 import RenewalSelection from "./renewalSelectionReducer";
+import Resources from "./resourcesReducer";
 // import {
 //    FLUSH,
 //    REHYDRATE,
@@ -23,7 +24,8 @@ const persistConfig = {
 const reducer = combineReducers({
   navigation: Navigation,
   newBuildList: NewBuildSelection,
-  renewalList: RenewalSelection
+  renewalList: RenewalSelection,
+  resources: Resources
 
 })
 

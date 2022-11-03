@@ -21,7 +21,7 @@ export default function Authentication() {
   return (
     <div className=' container__fullpage grid authentication__layout'>
       <div className='auth__layout__messageBanner'>
-        <p3 is='custom'>A new layout has launched. Please enjoy the new features. <span>Click here for log in credentials</span>.</p3>
+        <p3 is='custom'>A new layout has launched. Please enjoy the new features.</p3>
       </div>
       <div className='auth__layout__titleBanner'>
         <h3>Welcome to the OneDigital | Ease hub</h3>

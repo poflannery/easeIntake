@@ -27,6 +27,18 @@ import AdministratorRenewal from './RenewalData/Administrator';
 import RatesRenewal from './RenewalData/Rates';
 import DeadlinesRenewal from './RenewalData/Deadlines';
 import AdditionalNotesRenewal from './RenewalData/AdditionalNotes';
+import EligibilityRenewal from './RenewalData/Eligibility';
+import CoveragesOneRenewal from './RenewalData/CoveragesOne';
+import CoveragesTwoRenewal from './RenewalData/CoveragesTwo';
+import MySaved from './UploadDocsData/UploadDocs';
+import Queue from './QueueData/Queue';
+import UploadDocs from './UploadDocsData/UploadDocs';
+import Procedures from './ResourcesData/Procedures';
+import CarrierConnectionsGuides from './ResourcesData/CarrierConnectionsGuides';
+import HelpfulPackets from './ResourcesData/HelpfulPackets';
+import Downloads from './ResourcesData/Downloads';
+import Payroll from './ResourcesData/Payroll';
+import OtherResources from './ResourcesData/Other';
 
 
 export default function IntakeHub() {
@@ -35,6 +47,7 @@ export default function IntakeHub() {
 const store = useSelector(state => state.navigation);
 const storeNewBuildList = useSelector(state => state.newBuildList)
 const storeRenewalList = useSelector(state => state.renewalList)
+const storeResourceList = useSelector(state => state.resources)
 
   return (
     <div className=' intakeHub__layout grid'>
@@ -76,12 +89,37 @@ const storeRenewalList = useSelector(state => state.renewalList)
             <>
               { storeRenewalList.name === 'Basic Information' ? <BasicInformationRenewal /> :
                 storeRenewalList.name === 'Administrator' ? <AdministratorRenewal /> :
-                storeRenewalList.name === 'Eligibility' ? '' :
-                storeRenewalList.name === 'CoveragesOne' ? '' :
-                storeRenewalList.name === 'CoveragesTwo' ? '' :
+                storeRenewalList.name === 'Eligibility' ? <EligibilityRenewal /> :
+                storeRenewalList.name === 'CoveragesOne' ? <CoveragesOneRenewal /> :
+                storeRenewalList.name === 'CoveragesTwo' ? <CoveragesTwoRenewal /> :
                 storeRenewalList.name === 'Rates' ? <RatesRenewal /> :
                 storeRenewalList.name === 'Deadlines' ? <DeadlinesRenewal /> :
-                storeRenewalList.name === 'Additional' ? <AdditionalNotesRenewal /> : null}
+                storeRenewalList.name === 'Additional' ? <AdditionalNotesRenewal /> : null }
+            </>
+            }
+            { store.location === 'My Saved' &&
+            <>
+              <MySaved />
+            </>
+            }
+            { store.location === 'Resources' &&
+            <>
+              { storeResourceList.name === 'Procedures' ? <Procedures /> :
+                storeResourceList.name === 'Carrier Connections Guides' ? <CarrierConnectionsGuides /> :
+                storeResourceList.name === 'Helpful Packets' ? <HelpfulPackets /> :
+                storeResourceList.name === 'Downloads' ? <Downloads /> :
+                storeResourceList.name === 'Payroll' ? <Payroll /> :
+                storeResourceList.name === 'Other' ? <OtherResources /> : null }
+            </>
+            }
+            { store.location === 'Queue' &&
+            <>
+              <Queue />
+            </>
+            }
+            { store.location === 'Upload Docs' &&
+            <>
+              <UploadDocs />
             </>
             }
               </div>
