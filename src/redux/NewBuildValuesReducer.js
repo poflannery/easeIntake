@@ -19,75 +19,144 @@ export const NewBuildValues = createSlice({
         payroll: '',
         interestedPayroll: '',
         extraEligibility: '',
+        medicalPlanNumber: '',
+        medicalPlanCarriers: '',
+        medicalDetails: '',
+        dentalPlanNumber: '',
+        dentalPlanCarriers: '',
+        dentalDetails: '',
+        visionPlanNumber: '',
+        visionPlanCarriers: '',
+        visionDetails: '',
+        //
+        basicLifePlanNumber: '',
+        basicLifePlanCarriers: '',
+        basicLifeDetails: '',
+        volLifePlanNumber: '',
+        volLifePlanCarriers: '',
+        volLifeDetails: '',
+        stdPlanNumber: '',
+        stdPlanCarriers: '',
+        stdDetails: '',
+        ltdPlanNumber: '',
+        ltdPlanCarriers: '',
+        ltdDetails: '',
+        additionalLifeDetails: '',
+        financialPlanNumber: '',
+        financialPlanCarriers: '',
+        financialDetails: '',
+        otherPlanNumber: '',
+        otherPlanCarriers: '',
+        otherDetails: '',
+        rates: '',
+        buildDeadline: '',
+        openEnrollment: '',
+        allOtherDetails: ''
     },
     reducers: {
-        setgroupName: (state,action) => {
+        setGroupNameValue: (state,action) => {
             state.groupName = action.payload
         },
-        setcity: (state,action) => {
+        setCityValue: (state,action) => {
             state.city = action.payload
         },
-        setstate: (state,action) => {
+        setStateValue: (state,action) => {
             state.state = action.payload
         },
-        setzip: (state,action) => {
+        setZipValue: (state,action) => {
             state.zip = action.payload
         },
-        setsicCode: (state,action) => {
+        setSicCodeValue: (state,action) => {
             state.sicCode = action.payload
         },
-        setfein: (state,action) => {
+        setFeinValue: (state,action) => {
             state.fein = action.payload
         },
-        setwebsite: (state,action) => {
+        setWebsiteValue: (state,action) => {
             state.website = action.payload
         },
-        setadminName: (state,action) => {
+        setAdminNameValue: (state,action) => {
             state.adminName = action.payload
         },
-        setadminEmail: (state,action) => {
+        setAdminEmailValue: (state,action) => {
             state.adminEmail = action.payload
         },
-        seteligibilityClasses: (state,action) => {
+        setEligibilityClassesValue: (state,action) => {
             state.eligibilityClasses = action.payload
         },
-        setminimumHours: (state,action) => {
+        setMinimumHoursValue: (state,action) => {
             state.minimumHours = action.payload
         },
-        setterminationType: (state,action) => {
+        setTerminationTypeValue: (state,action) => {
             state.terminationType = action.payload
         },
-        setwaitingPeriod: (state,action) => {
+        setWaitingPeriodValue: (state,action) => {
             state.waitingPeriod = action.payload
         },
-        setpayroll: (state,action) => {
+        setPayrollValue: (state,action) => {
             state.payroll = action.payload
         },
-        setinterestedPayroll: (state,action) => {
+        setInterestedPayrollValue: (state,action) => {
             state.interestedPayroll = action.payload
         },
-        setextraEligibility: (state,action) => {
+        setExtraEligibilityValue: (state,action) => {
             state.extraEligibility = action.payload
+        },
+        setVisionCarriersValue: (state,action) => {
+            state.visionPlanCarriers = action.payload
+        },
+        setVisionNumberValue: (state,action) => {
+            state.visionPlanNumber = action.payload
+        },
+        setVisionDetailsValue: (state,action) => {
+            state.visionDetails = action.payload
+        },
+        setDentalNumberValue: (state,action) => {
+            state.dentalPlanNumber = action.payload
+        },
+        setDentalCarriersValue: (state,action) => {
+            state.dentalPlanCarriers = action.payload
+        },
+        setDentalDetailsValue: (state,action) => {
+            state.dentalDetails = action.payload
+        },
+        setMedicalDetailsValue: (state,action) => {
+            state.medicalDetails = action.payload
+        },
+        setMedicalCarriersValue: (state,action) => {
+            state.medicalPlanCarriers = action.payload
+        },
+        setMedicalNumberValue: (state,action) => {
+            state.medicalPlanNumber = action.payload
         },
     }
 });
 
 export const { 
-    setgroupName,
-    setcity,
-    setstate,
-    setzip,
-    setsicCode,
-    setfein,
-    setwebsite,
-    setadminEmail,
-    setadminName,
-    seteligibilityClasses,
-    setminimumHours,
-    setterminationType,
-    setwaitingPeriod,
-    setpayroll,
-    setinterestedPayroll,
-    setextraEligibility    } = NewBuildValues.actions
+    setGroupNameValue,
+    setCityValue,
+    setStateValue,
+    setZipValue,
+    setSicCodeValue,
+    setFeinValue,
+    setWebsiteValue,
+    setAdminEmailValue,
+    setAdminNameValue,
+    setEligibilityClassesValue,
+    setMinimumHoursValue,
+    setTerminationTypeValue,
+    setWaitingPeriodValue,
+    setPayrollValue,
+    setInterestedPayrollValue,
+    setExtraEligibilityValue,
+    setVisionCarriersValue,
+    setVisionNumberValue,
+    setVisionDetailsValue,
+    setDentalNumberValue,
+    setDentalCarriersValue,
+    setDentalDetailsValue,
+    setMedicalDetailsValue,
+    setMedicalCarriersValue,
+    setMedicalNumberValue,    } = NewBuildValues.actions
 
 export default NewBuildValues.reducer

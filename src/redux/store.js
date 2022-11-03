@@ -8,6 +8,7 @@ import Resources from "./resourcesReducer";
 import NewBuildValues from "./NewBuildValuesReducer";
 import Global from "./globalReducer";
 import AdminNav from "./adminNavReducer";
+import RenewalValues from "./renewalValuesReducer";
 
 
 // import {
@@ -33,6 +34,7 @@ const reducer = combineReducers({
   renewalSidebar: RenewalSelection,
   resources: Resources,
   newBuildValues: NewBuildValues,
+  renewalValues: RenewalValues,
   global: Global
 
 })

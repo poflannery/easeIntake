@@ -8,7 +8,7 @@ import React, {useState} from 'react'
 // Redux Imports
 import { useDispatch, useSelector } from 'react-redux'
 import { setNoticeBarText } from '../../../redux/globalReducer';
-import { setgroupName,setcity,setstate,setzip,setsicCode,setfein,setwebsite } from '../../../redux/NewBuildValuesReducer';
+import { setWebsiteValue, setFeinValue, setSicCodeValue, setZipValue, setStateValue, setGroupNameValue, setCityValue } from '../../../redux/NewBuildValuesReducer';
 
 
 
@@ -45,19 +45,19 @@ const handleCheckFields = () => {
   }
 }
 const handleSaveInformation = () => {
-  setSubmitting(true)
-  dispatch(setgroupName(groupName))
-  dispatch(setcity(city))
-  dispatch(setstate(state))
-  dispatch(setzip(zip))
-  dispatch(setsicCode(sicCode))
-  dispatch(setfein(fein))
-  dispatch(setwebsite(website))
+  setSubmitting(true);
+  dispatch(setGroupNameValue(groupName));
+  dispatch(setCityValue(city));
+  dispatch(setStateValue(state));
+  dispatch(setZipValue(zip));
+  dispatch(setSicCodeValue(sicCode));
+  dispatch(setFeinValue(fein));
+  dispatch(setWebsiteValue(website));
   setTimeout(() => {
     console.log(store)
     setSubmitting(false)
     savedNotice()
-  },1000)
+  },1000);
 }
 const savedNotice = () => {
   dispatch(setNoticeBarText('Information Saved!'));

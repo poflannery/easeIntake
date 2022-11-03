@@ -2,7 +2,7 @@ import { Button, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setNoticeBarText } from '../../../redux/globalReducer';
-import { setadminEmail, setadminName } from '../../../redux/NewBuildValuesReducer';
+import { setAdminEmailValue, setAdminNameValue } from '../../../redux/NewBuildValuesReducer';
 
 export default function Administrator() {
 
@@ -18,8 +18,8 @@ const [submitting,setSubmitting] = useState(false)
 // methods
 const handleSaveInformation = () => {
   setSubmitting(true)
-  dispatch(setadminName(adminName))
-  dispatch(setadminEmail(adminEmail))
+  dispatch(setAdminNameValue(adminName))
+  dispatch(setAdminEmailValue(adminEmail))
   setTimeout(() => {
     console.log(store)
     setSubmitting(false)
