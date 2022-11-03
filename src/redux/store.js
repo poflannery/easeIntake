@@ -5,6 +5,10 @@ import sessionStorage from "redux-persist/lib/storage/session";
 import NewBuildSelection from "./newBuildSelectionReducer";
 import RenewalSelection from "./renewalSelectionReducer";
 import Resources from "./resourcesReducer";
+import NewBuildValues from "./NewBuildValuesReducer";
+import Global from "./globalReducer";
+
+
 // import {
 //    FLUSH,
 //    REHYDRATE,
@@ -25,7 +29,9 @@ const reducer = combineReducers({
   navigation: Navigation,
   newBuildList: NewBuildSelection,
   renewalList: RenewalSelection,
-  resources: Resources
+  resources: Resources,
+  newBuildValues: NewBuildValues,
+  global: Global
 
 })
 

@@ -45,6 +45,7 @@ export default function IntakeHub() {
 
 // redux
 const store = useSelector(state => state.navigation);
+const globalStore = useSelector(state => state.global)
 const storeNewBuildList = useSelector(state => state.newBuildList)
 const storeRenewalList = useSelector(state => state.renewalList)
 const storeResourceList = useSelector(state => state.resources)
@@ -52,12 +53,12 @@ const storeResourceList = useSelector(state => state.resources)
   return (
     <div className=' intakeHub__layout grid'>
       <div className='noticeBar__container'>
-        <p>Verify tickets have been processed to completion prior to submitting for resolutions. <u>Click here for a procedure overview.</u></p>
+        <p>{globalStore.text}</p>
       </div>
       <div className='navigation__left grid'>
         <div className='navigation__left__title'>
-          <h3>{store.location}</h3>
-          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='contained' >Submit Build</Button> : ''}
+          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined'>Save Build</Button> : ''}
+          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' >Submit Build</Button> : ''}
         </div>
         <div className='navigation__left__content'>
             { store.location === 'New Build' ? <NewBuildSidebar /> : 
