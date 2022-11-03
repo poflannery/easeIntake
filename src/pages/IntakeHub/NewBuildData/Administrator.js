@@ -9,7 +9,6 @@ export default function Administrator() {
 // redux
 const dispatch = useDispatch();
 const store = useSelector(state => state.newBuildValues)
-const globalStore = useSelector(state => state.global)
 
 // local states
 const [adminName,setAdminName] = useState(store.adminName)
