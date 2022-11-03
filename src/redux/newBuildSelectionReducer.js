@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const BuildSelection = createSlice({
+export const NewBuildSelection = createSlice({
     name: 'Build Sidebar selection to populate fields',
     initialState: {
         name: '',
@@ -58,6 +58,6 @@ export const {
     setRates,
     setDeadlines,
     setAdditional,
-    setSelectedBuildSelection } = BuildSelection.actions
+    setSelectedBuildSelection } = NewBuildSelection.actions
 
-export default BuildSelection.reducer
+export default NewBuildSelection.reducer
