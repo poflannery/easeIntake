@@ -1,7 +1,6 @@
-import { Chip, ListItem, Stack } from '@mui/material'
+import { ListItem, Stack } from '@mui/material'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setNewBuildNavigation } from '../../../redux/navigationReducer';
 import { setAdditionalNewBuild, setAdministratorNewBuild, setBasicInformationNewBuild, setCoveragesFiveNewBuild, setCoveragesFourNewBuild, setCoveragesOneNewBuild, setCoveragesThreeNewBuild, setCoveragesTwoNewBuild, setDeadlinesNewBuild, setEligibilityNewBuild, setRatesNewBuild } from '../../../redux/newBuildSelectionReducer';
 
 export default function NewBuildSidebar() {

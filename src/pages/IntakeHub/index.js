@@ -35,13 +35,8 @@ import CoveragesOneRenewal from './RenewalData/CoveragesOne';
 import CoveragesTwoRenewal from './RenewalData/CoveragesTwo';
 import Queue from './QueueData/Queue';
 import UploadDocs from './UploadDocsData/UploadDocs';
-import Procedures from './ResourcesData/Procedures';
-import CarrierConnectionsGuides from './ResourcesData/CarrierConnectionsGuides';
-import HelpfulPackets from './ResourcesData/HelpfulPackets';
-import Downloads from './ResourcesData/Downloads';
-import Payroll from './ResourcesData/Payroll';
-import OtherResources from './ResourcesData/Other';
 import MySaved from './MySavedData/MySaved';
+import Downloads from './ResourcesData/Downloads';
 
 
 export default function IntakeHub() {
@@ -51,7 +46,6 @@ const store = useSelector(state => state.navigation);
 const globalStore = useSelector(state => state.global)
 const storenewBuildSidebar = useSelector(state => state.newBuildSidebar)
 const storerenewalSidebar = useSelector(state => state.renewalSidebar)
-const storeResourceList = useSelector(state => state.resources)
 
   return (
     <div className=' intakeHub__layout grid'>
@@ -108,12 +102,7 @@ const storeResourceList = useSelector(state => state.resources)
             }
             { store.location === 'Resources' &&
             <>
-              { storeResourceList.name === 'Procedures' ? <Procedures /> :
-                storeResourceList.name === 'Carrier Connections Guides' ? <CarrierConnectionsGuides /> :
-                storeResourceList.name === 'Helpful Packets' ? <HelpfulPackets /> :
-                storeResourceList.name === 'Downloads' ? <Downloads /> :
-                storeResourceList.name === 'Payroll' ? <Payroll /> :
-                storeResourceList.name === 'Other' ? <OtherResources /> : null }
+              <Downloads />
             </>
             }
             { store.location === 'Queue' &&

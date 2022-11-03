@@ -111,3 +111,22 @@
         }
     }
 }
+.table__font__css{
+    color: rgba(0,0,0,0.5);
+    font-size: 0.5rem !important;
+    
+}
+.total__table__row{
+    border-right: 1px solid rgba(0,0,0,0.1) ;
+    border-left: 1px solid rgba(0,0,0,0.1) ;
+    &:hover{
+        background-color: rgba(0,0,0,0.1);
+    }
+}
+.upload--content{
+    width: 100%;
+    min-height: 10rem;
+    background-color: #f3f7f9;
+    margin: 1rem 0rem;
+    border-radius: 10px;
+}

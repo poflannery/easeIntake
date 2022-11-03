@@ -1,19 +1,24 @@
-import { Button, TextField } from '@mui/material'
+import { Button, Table, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
 import React from 'react'
 
 export default function UploadDocs() {
   return (
-    <>
-          <p3 is="custom">Enter Any Additional Details Here</p3>
-          <TextField
-          variant='outlined'
-          size='small'
-          className='sidebar__left_search__input' 
-          placeholder='Details'
-          multiline
-          rows={4}
-          />
-          <Button variant='contained' sx={{marginTop: '1rem'}}>Save Information</Button>
+    <>    
+      <div>
+        <Button variant='contained' sx={{marginTop: '1rem'}}>Upload</Button>
+        <Button variant='contained' sx={{marginTop: '1rem'}}>Submit Documents</Button>
+      </div>
+      <p3 is='custom' />
+      <TableContainer>
+        <Table>
+          <TableHead>
+            <TableRow style={{width: '100%'}}>
+              <TableCell width={'70%'}>Document Name</TableCell>
+              <TableCell width={'30%'}>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+        </Table>
+      </TableContainer>
     </>
   )
 }

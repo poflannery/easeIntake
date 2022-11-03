@@ -1,4 +1,4 @@
-import { Chip, ListItem, Stack } from '@mui/material'
+import { ListItem, Stack } from '@mui/material'
 import React from 'react'
 
 export default function UploadDocsSidebar() {
