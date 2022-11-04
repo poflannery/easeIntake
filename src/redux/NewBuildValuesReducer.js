@@ -35,6 +35,7 @@ export const NewBuildValues = createSlice({
         volLifePlanNumber: '',
         volLifePlanCarriers: '',
         volLifeDetails: '',
+        //
         stdPlanNumber: '',
         stdPlanCarriers: '',
         stdDetails: '',
@@ -129,6 +130,24 @@ export const NewBuildValues = createSlice({
         setMedicalNumberValue: (state,action) => {
             state.medicalPlanNumber = action.payload
         },
+        setBasicLifeNumbersValue: (state,action) => {
+            state.basicLifePlanNumber = action.payload
+        },
+        setBasicLifeCarriersValue: (state,action) => {
+            state.basicLifePlanCarriers = action.payload
+        },
+        setBasicLifeDetailsValue: (state,action) => {
+            state.basicLifeDetails = action.payload
+        },
+        setVolLifeNumbersValue: (state,action) => {
+            state.volLifePlanNumber = action.payload
+        },
+        setVolLifeCarriersValue: (state,action) => {
+            state.volLifePlanCarriers = action.payload
+        },
+        setVolLifeDetailsValue: (state,action) => {
+            state.volLifeDetails = action.payload
+        },
     }
 });
 
@@ -157,6 +176,12 @@ export const {
     setDentalDetailsValue,
     setMedicalDetailsValue,
     setMedicalCarriersValue,
-    setMedicalNumberValue,    } = NewBuildValues.actions
+    setMedicalNumberValue,
+    setBasicLifeDetailsValue,
+    setBasicLifeCarriersValue,
+    setBasicLifeNumbersValue,
+    setVolLifeCarriersValue,
+    setVolLifeDetailsValue,
+    setVolLifeNumbersValue    } = NewBuildValues.actions
 
 export default NewBuildValues.reducer
