@@ -4,7 +4,8 @@ export const Global = createSlice({
     name: 'Resources Sections',
     initialState: {
         text: 'Notifications will appear here when needed!',
-        user: ''
+        user: '',
+        savedIntakeIndex: 0
     },
     reducers: {
         setNoticeBarText: (state,action) => {
@@ -12,12 +13,16 @@ export const Global = createSlice({
         },
         setUserGlobal: (state,action) => {
             state.user = action.payload
+        },
+        setIntakeIndex: (state,action) => {
+            state.savedIntakeIndex = action.payload
         }
     }
 });
 
 export const { 
     setNoticeBarText,
-    setUserGlobal } = Global.actions
+    setUserGlobal,
+    setIntakeIndex } = Global.actions
 
 export default Global.reducer
