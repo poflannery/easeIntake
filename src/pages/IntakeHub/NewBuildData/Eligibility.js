@@ -18,13 +18,13 @@ const store = useSelector(state => state.newBuildValues)
 
 
 // local states
-const [eligibilityClasses,setEligibilityClasses] = useState('')
-const [payroll,setPayroll] = useState('')
-const [interested,setInterestedPayroll] = useState('')
-const [extraEligibility,setExtraEligibility] = useState('')
-const [minimumHours,setMinimumHours] = useState('')
-const [benefitTermination,setBenefitTermination] = useState('')
-const [waitingPeriod,setWaitingPeriod] = useState('')
+const [eligibilityClasses,setEligibilityClasses] = useState(store.eligibilityClasses)
+const [payroll,setPayroll] = useState(store.payroll)
+const [interested,setInterestedPayroll] = useState(store.interested)
+const [extraEligibility,setExtraEligibility] = useState(store.extraEligibility)
+const [minimumHours,setMinimumHours] = useState(store.minimumHours)
+const [benefitTermination,setBenefitTermination] = useState(store.terminationType)
+const [waitingPeriod,setWaitingPeriod] = useState(store.waitingPeriod)
 const [stage,setStage] = useState((minimumHours && benefitTermination && waitingPeriod) ? 1 : 0)
 const [error1,setError1] = useState(false)
 const [error2,setError2] = useState(false)
@@ -124,17 +124,17 @@ const savedNotice = () => {
           disabled={submitting ? true : false}
           >
             <MenuItem value='Immediate'>Immediate</MenuItem>
-            <MenuItem value='Immediate'>0 Days FOM</MenuItem>
-            <MenuItem value='Immediate'>30 Days FOM</MenuItem>
-            <MenuItem value='Immediate'>30 Days FOMF</MenuItem>
-            <MenuItem value='Immediate'>60 Days FOM</MenuItem>
-            <MenuItem value='Immediate'>60 Days FOMF</MenuItem>
-            <MenuItem value='Immediate'>90 Days FOM</MenuItem>
-            <MenuItem value='Immediate'>90 Days FOMF</MenuItem>
-            <MenuItem value='Immediate'>15th of the Month</MenuItem>
-            <MenuItem value='Immediate'>Semi-Annual</MenuItem>
-            <MenuItem value='Immediate'>Quarterly</MenuItem>
-            <MenuItem value='Immediate'>Other... list in details</MenuItem>
+            <MenuItem value='0 Days FOM'>0 Days FOM</MenuItem>
+            <MenuItem value='30 Days FOM'>30 Days FOM</MenuItem>
+            <MenuItem value='30 Days FOMF'>30 Days FOMF</MenuItem>
+            <MenuItem value='60 Days FOM'>60 Days FOM</MenuItem>
+            <MenuItem value='60 Days FOMF'>60 Days FOMF</MenuItem>
+            <MenuItem value='90 Days FOM'>90 Days FOM</MenuItem>
+            <MenuItem value='90 Days FOMF'>90 Days FOMF</MenuItem>
+            <MenuItem value='15th of the Month'>15th of the Month</MenuItem>
+            <MenuItem value='Semi-Annual'>Semi-Annual</MenuItem>
+            <MenuItem value='Quarterly'>Quarterly</MenuItem>
+            <MenuItem value='Other... list in details'>Other... list in details</MenuItem>
           </TextField>
           </div>
           <p3 is="custom">Additional</p3>

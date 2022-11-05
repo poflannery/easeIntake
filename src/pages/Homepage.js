@@ -1,11 +1,16 @@
 
 
 // MUI Imports
-import { Button } from '@mui/material'
+import { Button, MenuItem, Modal, TextField } from '@mui/material'
+import { useFirestoreQuery } from '@react-query-firebase/firestore';
+import { collection, query } from 'firebase/firestore';
 
 // React Imports
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router'
+import { db } from '../firebase/config';
+import { setUserGlobal } from '../redux/globalReducer';
 
 // Router Imports
 
@@ -14,9 +19,40 @@ export default function Homepage() {
 
   // router
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // local State
+  const [open,setOpen] = useState(false)
+  const [user,setUser] = useState('')
+
+// firebase queries
+const users = query(collection(db,'users'));
+const getUsers = useFirestoreQuery(['users'], users, {
+  subscribe: true,
+  includeMetadataChanges: true
+})
+
+
+// methods
+  const handleClose = () => {
+    setOpen(false)
+  }
+  const handleOpen = () => {
+    setOpen(true)
+  }
+  const handleUser = () => {
+    dispatch(setUserGlobal(user))
+    navigate('/dashboard/intakeHub')
+  }
 
 
 
+  if (getUsers.isLoading){
+    return <div style={{width: '100%', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Loading...</div>
+  }
+  const userData = getUsers.data
+
+  
 
   return (
     <div className=' container__fullpage grid authentication__layout'>
@@ -32,7 +68,7 @@ export default function Homepage() {
             <div className='div_column'>
               <h1>Ease Intake Hub</h1>
               <p1 is='custom'>Review and submit an intake form as the first step to requesting an ease build or renewal</p1>
-              <Button variant='contained' onClick={() => navigate('/dashboard/intakeHub')}>Launch Intake</Button>
+              <Button variant='contained' onClick={handleOpen}>Launch Intake</Button>
             </div>
             <div className='div_column'>
               <h1>Ticket Support Desk</h1>
@@ -52,6 +88,30 @@ export default function Homepage() {
           </div>
         </div>
       </div>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        >
+          <div className='modal'>
+            <h2>Choose Your Name</h2>
+            <TextField
+            variant='outlined'
+            size='small'
+            className='sidebar__left_search__input' 
+            label='Benefit Termination'
+            select
+            onChange={(e) => setUser(e.target.value)}
+            >
+              {userData.docs.map(doc => {
+                const data = doc.data()
+                return (
+                  <MenuItem value={data.name}>{data.name}</MenuItem>
+                )
+              })}
+          </TextField>
+          <Button variant='contained' disabled={user === '' ? true : false} onClick={handleUser}>Save Build</Button>
+          </div>
+        </Modal>
     </div>
   )
 }
