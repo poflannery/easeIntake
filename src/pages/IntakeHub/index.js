@@ -55,7 +55,7 @@ const storerenewalSidebar = useSelector(state => state.renewalSidebar)
       <div className='navigation__left grid'>
         <div className='navigation__left__title'>
           { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined'>Save Build</Button> : ''}
-          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' >Submit Build</Button> : ''}
+          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined'>Submit Build</Button> : ''}
         </div>
         <div className='navigation__left__content'>
             { store.location === 'New Build' ? <NewBuildSidebar /> : 

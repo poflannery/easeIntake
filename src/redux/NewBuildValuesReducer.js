@@ -28,14 +28,12 @@ export const NewBuildValues = createSlice({
         visionPlanNumber: '',
         visionPlanCarriers: '',
         visionDetails: '',
-        //
         basicLifePlanNumber: '',
         basicLifePlanCarriers: '',
         basicLifeDetails: '',
         volLifePlanNumber: '',
         volLifePlanCarriers: '',
         volLifeDetails: '',
-        //
         stdPlanNumber: '',
         stdPlanCarriers: '',
         stdDetails: '',
@@ -148,6 +146,57 @@ export const NewBuildValues = createSlice({
         setVolLifeDetailsValue: (state,action) => {
             state.volLifeDetails = action.payload
         },
+        setStdNumberValue: (state,action) => {
+            state.stdPlanNumber = action.payload
+        },
+        setStdCarrierValue: (state,action) => {
+            state.stdPlanCarriers = action.payload
+        },
+        setStdDetailValue: (state,action) => {
+            state.stdDetails = action.payload
+        },
+        setLtdNumberValue: (state,action) => {
+            state.ltdPlanNumber = action.payload
+        },
+        setLtdCarrierValue: (state,action) => {
+            state.ltdPlanCarriers = action.payload
+        },
+        setLtdDetailValue: (state,action) => {
+            state.ltdDetails = action.payload
+        },
+        setAdditionalLifeValue: (state,action) => {
+            state.additionalLifeDetails = action.payload
+        },
+        setRatesValues: (state,action) => {
+            state.rates = action.payload
+        },
+        setbuildDeadlineValues: (state,action) => {
+            state.buildDeadline = action.payload
+        },
+        setOpenEnrollmentValues: (state,action) => {
+            state.openEnrollment = action.payload
+        },
+        setAllOtherDetailsValue: (state,action) => {
+            state.allOtherDetails = action.payload
+        },
+        setFinancialNumberValue: (state,action) => {
+            state.financialPlanNumber = action.payload
+        },
+        setFinancialCarrierValue: (state,action) => {
+            state.financialPlanCarriers = action.payload
+        },
+        setFinancialDetailValue: (state,action) => {
+            state.financialDetails = action.payload
+        },
+        setOtherNumberValue: (state,action) => {
+            state.otherPlanNumber = action.payload
+        },
+        setOtherCarrierValue: (state,action) => {
+            state.otherPlanCarriers = action.payload
+        },
+        setOtherDetailValue: (state,action) => {
+            state.otherDetails = action.payload
+        },
     }
 });
 
@@ -182,6 +231,23 @@ export const {
     setBasicLifeNumbersValue,
     setVolLifeCarriersValue,
     setVolLifeDetailsValue,
-    setVolLifeNumbersValue    } = NewBuildValues.actions
+    setVolLifeNumbersValue,
+    setStdNumberValue,
+    setStdCarrierValue,
+    setStdDetailValue,
+    setLtdNumberValue,
+    setLtdCarrierValue,
+    setLtdDetailValue,
+    setAdditionalLifeValue,
+    setFinancialNumberValue,
+    setFinancialCarrierValue,
+    setFinancialDetailValue,
+    setOtherNumberValue,
+    setOtherCarrierValue,
+    setOtherDetailValue,
+    setRatesValues,
+    setbuildDeadlineValues,
+    setOpenEnrollmentValues,
+    setAllOtherDetailsValue} = NewBuildValues.actions
 
 export default NewBuildValues.reducer
