@@ -1,24 +1,58 @@
-import { Button, MenuItem, Table, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material'
+import { Button, MenuItem, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material'
 import { useFirestoreQuery } from '@react-query-firebase/firestore';
 import { collection, query } from 'firebase/firestore'
+import { ref, uploadBytes } from 'firebase/storage';
 import React, { useState } from 'react'
-import { db } from '../../../firebase/config'
+import { useDispatch } from 'react-redux';
+import { db, storage } from '../../../firebase/config'
+import { setNoticeBarText } from '../../../redux/globalReducer';
+
 
 export default function UploadDocs() {
 
   const [disabled,setDisabled] = useState(true)
-  const [selectedFiles, setSelectedFiles] = useState({});
+  const [disabled2,setDisabled2] = useState(true)
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [group,setGroup] = useState('')
+  const dispatch = useDispatch();
 
-
-  const handleChoice = () => {
+  const handleChoice = (groupName) => {
+    setGroup(groupName);
     setDisabled(false)
+    console.log(groupName)
+    setDisabled2(false)
   }
   const handleFileSelect = (event) => {
-    setSelectedFiles(event.target.files)
-    console.log(event.target.files)
+    const array = [...selectedFiles]
+    Array.from(event.target.files).forEach(file => {
+      array.push(file)
+      setSelectedFiles([...array])
+      console.log(selectedFiles)
+    });
   }
-
-
+const handleRemove = (index) => {
+  let array = [...selectedFiles]
+  if (index > -1) {
+    array.splice(index, 1)
+    setSelectedFiles([...array])
+  }
+}
+const handleFileSubmit = () => {
+  setDisabled(true)
+  setDisabled2(true)
+  selectedFiles.forEach(file => {
+    const storageRef = ref(storage, `${group}/${file.name}`);
+    uploadBytes(storageRef, file).then(() => {
+      console.log('successful upload')
+    }).catch(error => {
+      console.log(error)
+    });
+    setTimeout(() => {
+      setSelectedFiles([]);
+      dispatch(setNoticeBarText('Document Uploaded Successfully! 0 Errors discovered!'))
+    },1000)
+  })
+}
 
   const submittedRef = query(collection(db,'submitted'));
   const submittedQuery = useFirestoreQuery(['submitted'], submittedRef, {
@@ -40,30 +74,46 @@ export default function UploadDocs() {
         size='small'
         className='sidebar__left_search__input input__narrower'
         select
+        onChange={(e) => handleChoice(e.target.value)}
         >
           {submittedData.docs.map((doc,i) => {
             
             const data = doc.data()
             if (data.groupName) {
             return (
-              <MenuItem index={i} value={data.groupName} onClick={handleChoice}>{data.groupName}</MenuItem>
+              <MenuItem index={i} value={data.groupName}>{data.groupName}</MenuItem>
             )
-          }})}
+          }
+          else return null
+          })}
         </TextField>
-        <Button variant='contained' sx={{marginTop: '1rem'}} component='label' disabled={disabled}>
-          Upload
-          <input hidden multiple type='file' onChange={handleFileSelect}/>
-        </Button>
+      <Button variant='contained' onClick={handleFileSubmit} disabled={disabled2}>Submit Documents</Button> 
       </div>
+      <Button variant='contained' sx={{marginTop: '1rem'}} component='label' disabled={disabled}>
+        Upload
+        <input hidden multiple type='file' onChange={handleFileSelect}/>
+      </Button>
       <p3 is='custom' />
       <TableContainer>
         <Table>
           <TableHead>
             <TableRow style={{width: '100%'}}>
               <TableCell width={'70%'}>Document Name</TableCell>
-              <TableCell width={'30%'}>Actions</TableCell>
+              <TableCell width={'30%'}>Action</TableCell>
             </TableRow>
           </TableHead>
+          <TableBody>
+            {
+              selectedFiles.map((file,i) => {
+                return (
+                  <TableRow>
+                    <TableCell>{file.name}</TableCell>
+                    <TableCell><p style={{cursor: 'pointer'}} index={i} onClick={(e) => handleRemove(e.target.getAttribute("index"))}>Remove</p></TableCell>
+                  </TableRow>
+                )
+              })
+            }
+          </TableBody>
         </Table>
       </TableContainer>
     </>
