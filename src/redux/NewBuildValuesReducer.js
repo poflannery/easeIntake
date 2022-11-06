@@ -197,6 +197,56 @@ export const NewBuildValues = createSlice({
         setOtherDetailValue: (state,action) => {
             state.otherDetails = action.payload
         },
+        clearNewBuildValues: (state) => {
+            state.groupName = '' 
+            state.city = '' 
+            state.state = '' 
+            state.zip = '' 
+            state.sicCode = '' 
+            state.fein = '' 
+            state.website = '' 
+            state.adminName = '' 
+            state.adminEmail = '' 
+            state.eligibilityClasses = '' 
+            state.minimumHours = '' 
+            state.terminationType = '' 
+            state.waitingPeriod = '' 
+            state.payroll = '' 
+            state.interestedPayroll = '' 
+            state.extraEligibility = '' 
+            state.medicalPlanNumber = '' 
+            state.medicalPlanCarriers = '' 
+            state.medicalDetails = '' 
+            state.dentalPlanNumber = '' 
+            state.dentalPlanCarriers = '' 
+            state.dentalDetails = '' 
+            state.visionPlanNumber = '' 
+            state.visionPlanCarriers = '' 
+            state.visionDetails = '' 
+            state.basicLifePlanNumber = '' 
+            state.basicLifePlanCarriers = '' 
+            state.basicLifeDetails = '' 
+            state.volLifePlanNumber = '' 
+            state.volLifePlanCarriers = '' 
+            state.volLifeDetails = '' 
+            state.stdPlanNumber = '' 
+            state.stdPlanCarriers = '' 
+            state.stdDetails = '' 
+            state.ltdPlanNumber = '' 
+            state.ltdPlanCarriers = '' 
+            state.ltdDetails = '' 
+            state.additionalLifeDetails = '' 
+            state.financialPlanNumber = '' 
+            state.financialPlanCarriers = '' 
+            state.financialDetails = '' 
+            state.otherPlanNumber = '' 
+            state.otherPlanCarriers = '' 
+            state.otherDetails = '' 
+            state.rates = '' 
+            state.buildDeadline = '' 
+            state.openEnrollment = '' 
+            state.allOtherDetails = ''
+        }
     }
 });
 
@@ -248,6 +298,7 @@ export const {
     setRatesValues,
     setbuildDeadlineValues,
     setOpenEnrollmentValues,
-    setAllOtherDetailsValue} = NewBuildValues.actions
+    setAllOtherDetailsValue,
+    clearNewBuildValues } = NewBuildValues.actions
 
 export default NewBuildValues.reducer

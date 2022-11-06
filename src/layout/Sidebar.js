@@ -1,6 +1,6 @@
 
 // MUI imports
-import { IconButton } from '@mui/material';
+import { IconButton, Tooltip } from '@mui/material';
 import { Stack } from '@mui/system';
 // icon imports
 import { IconArrowLeft, IconBook, IconCalendarEvent, IconFiles,  IconReport,  IconTicket, IconUser, IconUsers } from '@tabler/icons';
@@ -59,42 +59,42 @@ dispatch(setUploadDocsNavigation())
           </IconButton>
           <IconButton 
             onClick={handleClickNewBuild}
-            className={store.location == 'New Build' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
+            className={store.location === 'New Build' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
             disableRipple >
               <IconTicket size='1.5rem' stroke={1}/>
               <p3 is="custom">New Build</p3>
           </IconButton>
           <IconButton 
             onClick={handleClickRenewal}
-            className={store.location == 'Renewal' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
+            className={store.location === 'Renewal' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
             disableRipple >
               <IconUsers size='1.5rem' stroke={1}/>
               <p3 is="custom">Renewal</p3>
           </IconButton>
           <IconButton 
             onClick={handleClickMySaved}
-            className={store.location == 'My Saved' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
+            className={store.location === 'My Saved' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
             disableRipple>
               <IconReport size='1.5rem' stroke={1}/>
               <p3 is="custom">My Saved</p3>
           </IconButton>
           <IconButton 
             onClick={handleClickResources}
-            className={store.location == 'Resources' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
+            className={store.location === 'Resources' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
             disableRipple >
               <IconBook size='1.5rem' stroke={1}/>
               <p3 is="custom">Resources</p3>
           </IconButton>
           <IconButton 
             onClick={handleClickQueue}
-            className={store.location == 'Queue' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
+            className={store.location === 'Queue' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
             disableRipple >
               <IconCalendarEvent size='1.5rem' stroke={1}/>
               <p3 is="custom">Queue</p3>
           </IconButton>
           <IconButton 
             onClick={handleClickUploadDocs}
-            className={store.location == 'Upload Docs' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
+            className={store.location === 'Upload Docs' ? ' sidebar__nav-button--hover--selected' : 'sidebar__nav-button--hover'}
             disableRipple >
               <IconFiles size='1.5rem' stroke={1}/>
               <p3 is="custom">Upload Docs</p3>
@@ -111,13 +111,15 @@ dispatch(setUploadDocsNavigation())
               <IconArrowLeft size='1.5rem' stroke={1}/>
               <p3 is="custom">Return to Homepage</p3>
           </IconButton>
-          <IconButton 
-            className='sidebar__nav-button--nohover-last sidebar__nav-button--nohover'
-            disableRipple>
-              <div className='sidebar__nav-button--nohover-last--circle'>
-                <IconUser stroke={1}/>
-              </div>
-          </IconButton>
+          <Tooltip title='Account Features are currently disabled.' placement='right'>
+            <IconButton 
+              className='sidebar__nav-button--nohover-last sidebar__nav-button--nohover'
+              disableRipple>
+                <div className='sidebar__nav-button--nohover-last--circle'>
+                  <IconUser stroke={1}/>
+                </div>
+            </IconButton>
+          </Tooltip>
         </Stack>
       </nav>
     </div>

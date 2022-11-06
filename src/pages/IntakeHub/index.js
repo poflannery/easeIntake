@@ -2,7 +2,7 @@
 import { Button} from '@mui/material';
 
 // React Imports
-import React from 'react'
+import React, { useState } from 'react'
 
 // Redux Imports
 import { useDispatch, useSelector } from 'react-redux';
@@ -44,14 +44,24 @@ import Queue from './QueueData/Queue';
 import UploadDocs from './UploadDocsData/UploadDocs';
 import MySaved from './MySavedData/MySaved';
 import Downloads from './ResourcesData/Downloads';
+import { useNavigate } from 'react-router';
 
 
 
 export default function IntakeHub() {
 
+// local states
+const [saveButtonText,setSaveButtonText] = useState('Save Build')
+const [submitButtonText,setSubmitButtonText] = useState('Submit Build')
+const [disabledSave,setDisabledSave] = useState(false)
+const [disabledSubmit,setDisabledSubmit] = useState(false)
+
+
+// router
+const navigate = useNavigate();
+
 // redux
 const store = useSelector(state => state.navigation);
-
 const storeValues = useSelector(state => state.newBuildValues)
 const storeGlobal = useSelector(state => state.global)
 const dispatch = useDispatch();
@@ -72,6 +82,7 @@ const addSaved = useFirestoreCollectionMutation(saved)
 
 // methods
 const handleSubmit = () => {
+
   if (storeValues.groupName &&
     storeValues.city &&
     storeValues.state &&
@@ -94,7 +105,9 @@ const handleSubmit = () => {
     storeValues.buildDeadline &&
     storeValues.openEnrollment &&
     storeValues.allOtherDetails) {
-      addSubmitted.mutateAsync({
+      setDisabledSubmit(true)
+      setSubmitButtonText('Please Wait...')
+      addSubmitted.mutate({
         groupName: storeValues.groupName,
         city: storeValues.city,
         state: storeValues.state,
@@ -143,13 +156,15 @@ const handleSubmit = () => {
         buildDeadline: storeValues.buildDeadline,
         openEnrollment: storeValues.openEnrollment,
         allOtherDetails: storeValues.allOtherDetails
-      }).then(() => {
-        addQueue.mutate({
+      });
+      addQueue.mutate({
           groupName: storeValues.groupName,
           submitted: new Date().toLocaleString(),
           status: 'Submitted - Pending Review'
-        })
-      })
+      });
+      setTimeout(() =>{
+        navigate('/success', {state: {type: 'Submission', message: 'Congratulations! You have successfully submitted your intake form. You can review your build status in the live queue.'}})
+    },1000)
     } 
     else {
       // execute notice of required fields
@@ -167,8 +182,10 @@ const handleSave = () => {
 
 
 const handleSubmitSaved = () => {
+  setSaveButtonText('Please Wait...')
+  setDisabledSave(true)
   addSaved.mutate({
-    groupName: storeValues.groupName,
+        groupName: storeValues.groupName,
         city: storeValues.city,
         state: storeValues.state,
         zip: storeValues.zip,
@@ -217,6 +234,9 @@ const handleSubmitSaved = () => {
         openEnrollment: storeValues.openEnrollment,
         allOtherDetails: storeValues.allOtherDetails
   })
+  setTimeout(() =>{
+    navigate('/success', {state: {type: 'Save', message: 'Congratulations! You have successfully saved your intake form. If you wish to return to the saved intake, go to My Saved in the Ease Hub.'}})
+  },1000)
 }
 
 
@@ -229,8 +249,8 @@ const handleSubmitSaved = () => {
       </div>
       <div className='navigation__left grid'>
         <div className='navigation__left__title'>
-          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' onClick={handleSave}>Save Build</Button> : ''}
-          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' onClick={handleSubmit}>Submit Build</Button> : ''}
+          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' disabled={disabledSave} onClick={handleSave}>{saveButtonText}</Button> : ''}
+          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' disabled={disabledSubmit} onClick={handleSubmit}>{submitButtonText}</Button> : ''}
         </div>
         <div className='navigation__left__content'>
             { store.location === 'New Build' ? <NewBuildSidebar /> : 

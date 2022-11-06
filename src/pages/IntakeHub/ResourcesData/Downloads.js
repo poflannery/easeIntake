@@ -20,7 +20,7 @@ export default function Downloads() {
 
   return (
     <>
-          <p3 is="custom">Download will start automatically when chosen</p3>
+          <p3 is="custom">PDF Files will open in the browser. All other files will automatically download.</p3>
           <p3 is='custom' />
           <div>
           <TextField

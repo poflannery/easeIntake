@@ -7,6 +7,7 @@ import TicketLanding from "../pages/AdminDashboard/TicketLanding";
 import Users from "../pages/AdminDashboard/Users";
 import Homepage from "../pages/Homepage";
 import IntakeHub from "../pages/IntakeHub";
+import Confirmation from "../pages/IntakeHub/Confirmation";
 import TicketSupportDesk from "../pages/TicketSupportDesk";
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
@@ -67,6 +68,13 @@ const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Authentication />,
+                loading: async() => {
+                    return sleep(400)
+                }
+            },
+            {
+                path: '/success',
+                element: <Confirmation />,
                 loading: async() => {
                     return sleep(400)
                 }

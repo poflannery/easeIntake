@@ -109,7 +109,7 @@ const getUsers = useFirestoreQuery(['users'], users, {
                 )
               })}
           </TextField>
-          <Button variant='contained' disabled={user === '' ? true : false} onClick={handleUser}>Save Build</Button>
+          <Button variant='contained' disabled={user === '' ? true : false} onClick={handleUser}>Enter Site</Button>
           </div>
         </Modal>
     </div>
