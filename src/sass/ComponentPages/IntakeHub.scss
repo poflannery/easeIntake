@@ -122,6 +122,11 @@
         background-color: rgba(0,0,0,0.1);
     }
 }
+.total__Table__cell{
+    text-transform: capitalize;
+    font-family: 'Source Sans Pro' !important;
+    font-size: medium !important;
+}
 .upload--content{
     width: 100%;
     min-height: 10rem;

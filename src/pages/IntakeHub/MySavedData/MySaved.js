@@ -11,7 +11,6 @@ import { setAdditionalLifeValue, setAdminEmailValue, setAdminNameValue, setAllOt
 export default function MySaved() {
 
 // local states
-const [disabledView,setDisabledView] = useState(true)
 const [disabledButton,setDisabledButton] = useState(true)
 const store = useSelector(state => state.global)
 const dispatch = useDispatch();
@@ -93,6 +92,7 @@ const userData = userCollection.data
     <>
           <p1 is="custom"><b>Carefully review the following information:</b></p1>
           <p3 is='custom'>The saved intake form is to be used to retrieve previously started and exited intakes. In order to properly save an intake, you must use the 'Save Build' button in the upper left corner. The form will save as many intakes as you wish. Please begin to retrieve a previously saved intake from below. If you wish to work on or submit a different caseworker's intake, please return to the homepage and return by selecting their name.</p3>
+          <p3 is='custom'>After retrieving a saved intake, you MUST save the build again in order to update the saved intake. Please remember to save your build.</p3>
           <p3 is='custom'></p3>
           <TextField
           variant='outlined'
