@@ -83,7 +83,7 @@ const addSaved = useFirestoreCollectionMutation(saved)
 // methods
 const handleSubmit = () => {
 
-  if (storeValues.groupName &&
+if (storeValues.groupName &&
     storeValues.city &&
     storeValues.state &&
     storeValues.sicCode &&
@@ -104,10 +104,10 @@ const handleSubmit = () => {
     storeValues.otherPlanNumber &&
     storeValues.buildDeadline &&
     storeValues.openEnrollment &&
-    storeValues.allOtherDetails) {
+    storeValues.allOtherDetails) { 
       setDisabledSubmit(true)
       setSubmitButtonText('Please Wait...')
-      addSubmitted.mutate({
+      addSubmitted.mutateAsync({
         groupName: storeValues.groupName,
         city: storeValues.city,
         state: storeValues.state,
@@ -156,11 +156,12 @@ const handleSubmit = () => {
         buildDeadline: storeValues.buildDeadline,
         openEnrollment: storeValues.openEnrollment,
         allOtherDetails: storeValues.allOtherDetails
-      });
+      }).then(() => {
       addQueue.mutate({
           groupName: storeValues.groupName,
           submitted: new Date().toLocaleString(),
           status: 'Submitted - Pending Review'
+        })
       });
       setTimeout(() =>{
         navigate('/success', {state: {type: 'Submission', message: 'Congratulations! You have successfully submitted your intake form. You can review your build status in the live queue.'}})
