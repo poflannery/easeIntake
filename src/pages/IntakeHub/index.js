@@ -63,6 +63,7 @@ const navigate = useNavigate();
 // redux
 const store = useSelector(state => state.navigation);
 const storeValues = useSelector(state => state.newBuildValues)
+const storeRenewals = useSelector(state => state.renewalValues)
 const storeGlobal = useSelector(state => state.global)
 const dispatch = useDispatch();
 const globalStore = useSelector(state => state.global)
@@ -240,8 +241,102 @@ const handleSubmitSaved = () => {
   },1000)
 }
 
+const handleSaveRenewal = () => {
+  if (storeRenewals.groupName) {
+    handleSubmitSavedRenewal()
+  }
+  else {
+    dispatch(setNoticeBarText('Enter a Group Name First.'))
+  }
+}
+
+const handleSubmitSavedRenewal = () => {
+  setSaveButtonText('Please Wait...')
+  setDisabledSave(true)
+  addSaved.mutate({
+        type: 'Renewal',
+        groupName: storeRenewals.groupName,
+        city: storeRenewals.city,
+        state: storeRenewals.state,
+        zip: storeRenewals.zip,
+        sicCode: storeRenewals.sicCode,
+        fein: storeRenewals.fein,
+        website: storeRenewals.website,
+        adminName: storeRenewals.adminName,
+        adminEmail: storeRenewals.adminEmail,
+        eligibilityClasses: storeRenewals.eligbilityChangeDetails,
+        medicalPlanChanges: storeRenewals.medicalChange,
+        medicalDetails: storeRenewals.medicalChangeDetails,
+        dentalPlanCarriers: storeRenewals.dentalChange,
+        dentalDetails: storeRenewals.dentalChangeDetails,
+        visionPlanCarriers: storeRenewals.visionChange,
+        visionDetails: storeRenewals.visionChangeDetails,
+        otherPlanChanges: storeRenewals.otherPlanChange,
+        OtherPlanChangeDetails: storeRenewals.otherChangeDetails,
+        rateChangeDetails: storeRenewals.rateChangeDetails,
+        buildDeadline: storeRenewals.buildDeadline,
+        openEnrollment: storeRenewals.enrollmentDates,
+        additionalNotes: storeRenewals.additionalNotes
+  })
+  setTimeout(() =>{
+    navigate('/success', {state: {type: 'Save', message: 'Congratulations! You have successfully saved your intake form. If you wish to return to the saved intake, go to My Saved in the Ease Hub.'}})
+  },1000)
+}
 
 
+
+const handleSubmitRenewal = () => {
+  
+if (storeRenewals.groupName &&
+  storeRenewals.city &&
+  storeRenewals.state &&
+  storeRenewals.sicCode &&
+  storeRenewals.buildDeadline &&
+  storeRenewals.enrollmentDates &&
+  storeRenewals.additionalNotes) { 
+    setDisabledSubmit(true)
+    setSubmitButtonText('Please Wait...')
+    addSubmitted.mutateAsync({
+      type: 'Renewal',
+      groupName: storeRenewals.groupName,
+      city: storeRenewals.city,
+      state: storeRenewals.state,
+      zip: storeRenewals.zip,
+      sicCode: storeRenewals.sicCode,
+      fein: storeRenewals.fein,
+      website: storeRenewals.website,
+      adminName: storeRenewals.adminName,
+      adminEmail: storeRenewals.adminEmail,
+      eligibilityClasses: storeRenewals.eligbilityChangeDetails,
+      medicalPlanChanges: storeRenewals.medicalChange,
+      medicalDetails: storeRenewals.medicalChangeDetails,
+      dentalPlanCarriers: storeRenewals.dentalChange,
+      dentalDetails: storeRenewals.dentalChangeDetails,
+      visionPlanCarriers: storeRenewals.visionChange,
+      visionDetails: storeRenewals.visionChangeDetails,
+      otherPlanChanges: storeRenewals.otherPlanChange,
+      OtherPlanChangeDetails: storeRenewals.otherChangeDetails,
+      rateChangeDetails: storeRenewals.rateChangeDetails,
+      buildDeadline: storeRenewals.buildDeadline,
+      openEnrollment: storeRenewals.enrollmentDates,
+      additionalNotes: storeRenewals.additionalNotes
+    }).then(() => {
+    addQueue.mutate({
+        type: 'Renewal',
+        groupName: storeRenewals.groupName,
+        submitted: new Date().toLocaleString(),
+        status: 'Submitted - Pending Review'
+      })
+    });
+    setTimeout(() =>{
+      navigate('/success', {state: {type: 'Submission', message: 'Congratulations! You have successfully submitted your intake form. You can review your build status in the live queue.'}})
+  },1000)
+  } 
+  else {
+    // execute notice of required fields
+    dispatch(setNoticeBarText('Please recheck for required fields! Each field must be filled if required.'))
+  }
+}
 
   return (
     <div className=' intakeHub__layout grid'>
@@ -250,8 +345,10 @@ const handleSubmitSaved = () => {
       </div>
       <div className='navigation__left grid'>
         <div className='navigation__left__title'>
-          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' disabled={disabledSave} onClick={handleSave}>{saveButtonText}</Button> : ''}
-          { store.location === 'New Build' || store.location === 'Renewal' ? <Button variant='outlined' disabled={disabledSubmit} onClick={handleSubmit}>{submitButtonText}</Button> : ''}
+          { store.location === 'New Build' ? <Button variant='outlined' disabled={disabledSave} onClick={handleSave}>{saveButtonText}</Button> : ''}
+          { store.location === 'New Build' ? <Button variant='outlined' disabled={disabledSubmit} onClick={handleSubmit}>{submitButtonText}</Button> : ''}
+          { store.location === 'Renewal' ? <Button variant='outlined' disabled={disabledSave} onClick={handleSaveRenewal}>{saveButtonText}</Button> : ''}
+          { store.location === 'Renewal' ? <Button variant='outlined' disabled={disabledSubmit} onClick={handleSubmitRenewal}>{submitButtonText}</Button> : ''}
         </div>
         <div className='navigation__left__content'>
             { store.location === 'New Build' ? <NewBuildSidebar /> : 

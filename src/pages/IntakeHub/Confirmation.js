@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router'
 import { clearNewBuildValues } from '../../redux/NewBuildValuesReducer';
+import { clearRenewalValues } from '../../redux/renewalValuesReducer';
 
 export default function Confirmation() {
 
@@ -13,6 +14,7 @@ const dispatch = useDispatch();
 
 useEffect(() => {
     dispatch(clearNewBuildValues())
+    dispatch(clearRenewalValues())
      // eslint-disable-next-line
 },[])
 

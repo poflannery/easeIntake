@@ -29,6 +29,11 @@ const handleUserSelect = (event) => {
 const handleRetrieveIntake = () => {
   setDisabledButton(true)
   const doc = userData.docs[store.savedIntakeIndex].data()
+
+  if (doc.type && doc.type === 'Renewal') {
+    dispatch()
+  }
+  else {
   dispatch(setGroupNameValue(doc.groupName));
   dispatch(setCityValue(doc.city));
   dispatch(setStateValue(doc.state));
@@ -77,6 +82,7 @@ const handleRetrieveIntake = () => {
   dispatch(setOtherNumberValue(doc.otherPlanNumber));
   dispatch(setOtherCarrierValue(doc.otherPlanCarriers));
   dispatch(setOtherDetailValue(doc.otherDetails));
+  }
   setTimeout(() => {
     dispatch(setNewBuildNavigation())
   },1500)

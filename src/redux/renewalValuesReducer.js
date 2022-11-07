@@ -58,10 +58,10 @@ export const RenewalValues = createSlice({
             state.eligbilityChangeDetails = action.payload
         },
         setOtherPlanChangeRenewal: (state,action) => {
-            state.groupName = action.payload
+            state.otherPlanChange = action.payload
         },
         setOtherPlanDetailsRenewal: (state,action) => {
-            state.groupName = action.payload
+            state.otherChangeDetails = action.payload
         },
         setMedicalChangeRenewal: (state) => {
             state.medicalChange = !state.medicalChange
@@ -92,6 +92,30 @@ export const RenewalValues = createSlice({
         },
         setAdditionalNotesRenewal: (state,action) => {
             state.additionalNotes = action.payload
+        },
+        clearRenewalValues: (state) => {
+            state.groupName = ''
+            state.city = ''
+            state.state = ''
+            state.zip = ''
+            state.sicCode = ''
+            state.fein = ''
+            state.website = ''
+            state.adminName = ''
+            state.adminEmail = ''
+            state.eligbilityChangeDetails = ''
+            state.otherPlanChange = false
+            state.otherChangeDetails = ''
+            state.medicalChange = false
+            state.medicalChangeDetails = ''
+            state.dentalChange = false
+            state.dentalChangeDetails = ''
+            state.visionChange = false
+            state.visionChangeDetails = ''
+            state.rateChangeDetails = ''
+            state.buildDeadline = ''
+            state.enrollmentDates = ''
+            state.additionalNotes = ''
         }
     }
 });
@@ -113,11 +137,12 @@ export const {
     setBuildDeadlineRenewal,
     setEnrollmentDatesRenewal,
     setAdditionalNotesRenewal,
-    setMedicalChange,
-    setMedicalChangeDetails,
-    setDentalChange,
-    setDentalChangeDetails,
-    setVisionChange,
-    setVisionChangeDetails } = RenewalValues.actions
+    setMedicalChangeRenewal,
+    setMedicalChangeDetailsRenewal,
+    setDentalChangeRenewal,
+    setDentalChangeDetailsRenewal,
+    setVisionChangeRenewal,
+    setVisionChangeDetailsRenewal,
+    clearRenewalValues } = RenewalValues.actions
 
 export default RenewalValues.reducer
