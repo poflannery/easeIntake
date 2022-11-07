@@ -1,16 +1,27 @@
-import { Button, Chip, InputAdornment, ListItem, Stack, TableHead, TableRow, TextField } from '@mui/material';
-import { IconInfoCircle, IconSearch } from '@tabler/icons';
+import { Button, Checkbox, Chip, IconButton, InputAdornment, ListItem, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Tooltip } from '@mui/material';
+import { IconCheck, IconInfoCircle, IconMail, IconSearch, IconX } from '@tabler/icons';
+import { collection, query } from 'firebase/firestore';
 import React from 'react';
 import '../../sass/ComponentPages/TicketsLanding.scss';
-
+import { db } from '../../firebase/config'
+import { useFirestoreQuery } from '@react-query-firebase/firestore';
 
 
 
 
 export default function TicketLanding() {
 
+// Firebase Queries
+const AllTickets = query(collection(db, 'tickets/_/All'));
+const allCollection = useFirestoreQuery(['tickets/_/All'], AllTickets, {
+  subscribe: true,
+  includeMetadataChanges: true
+});
 
-
+if ( allCollection.isLoading ) {
+  return <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>Loading...</div>
+}
+const allQuery = allCollection.data
 
 // return \\   
   return (
@@ -96,7 +107,71 @@ export default function TicketLanding() {
             <p4 is="custom">{`{variable}`}</p4>
           </div>
           <div className='mainContent__ticket__totals'>
-            
+          <TableContainer>
+              <Table width='100%'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell padding='checkbox'>
+                      <Checkbox size='small' />
+                    </TableCell>
+                    <TableCell align="left" width={'15%'}>
+                      <p4 is='custom' className='table__font__css'>Requestor</p4>
+                    </TableCell>
+                    <TableCell align="left" width={'40%'}>
+                      <p4 is='custom' className='table__font__css'>Subject</p4>
+                    </TableCell>
+                    <TableCell align="left" width={'13%'}>
+                      <p4 is='custom' className='table__font__css'>User</p4>
+                    </TableCell>
+                    <TableCell align="left" width={'7%'}>
+                      <p4 is='custom' className='table__font__css'>Status</p4>
+                    </TableCell>
+                    <TableCell align="left" width={'13%'}>
+                      <p4 is='custom' className='table__font__css'>Created</p4>
+                    </TableCell>
+                    <TableCell align="left" width={'15%'}>
+                    </TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {allQuery.docs.map(doc => {
+                  const data = doc.data()
+                  return (
+                    <TableRow className='total__table__row' key={doc.id}>
+                      <TableCell padding='checkbox'>
+                      <Checkbox size='small' />
+                      </TableCell>
+                      <TableCell>
+                      <div className='mainContent__ticket__totals__requestor'>
+                          <icon is='custom'></icon>
+                          <div>
+                          <p1 is="custom">{data.requestor}</p1>
+                          <p4 is="custom">{data.email}</p4>
+                          </div>
+                      </div>
+                      </TableCell>
+                      <TableCell>
+                      <p1 is="custom">{data.subject}</p1>
+                      </TableCell>
+                      <TableCell>
+                      <p1 is="custom">{data.user}</p1>
+                      </TableCell>
+                      <TableCell>
+                      <Chip variant='filled' color={data.status === 'closed' ? 'error' : data.status === 'solved' ? 'success' : data.status === 'pending' ? 'warning' : 'primary'} label={data.status} size='small' />
+                      </TableCell>
+                      <TableCell>
+                      <p1 is="custom">{new Date(data.lastUpdate).toLocaleString()}</p1>
+                      </TableCell>
+                      <TableCell>
+                        <Tooltip title='Delete Ticket'><IconButton><IconX /></IconButton></Tooltip>
+                        <Tooltip title='Mark as Completed'><IconButton><IconCheck /></IconButton></Tooltip>
+                        <Tooltip title='Send Automated Update'><IconButton><IconMail /></IconButton></Tooltip>
+                      </TableCell>
+                    </TableRow>
+                    )})}
+                  </TableBody>
+              </Table>
+            </TableContainer>
           </div>
         </div>
       </div>
