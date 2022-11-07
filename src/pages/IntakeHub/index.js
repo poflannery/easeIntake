@@ -109,6 +109,7 @@ if (storeValues.groupName &&
       setDisabledSubmit(true)
       setSubmitButtonText('Please Wait...')
       addSubmitted.mutateAsync({
+        type: 'New Build',
         groupName: storeValues.groupName,
         city: storeValues.city,
         state: storeValues.state,
@@ -187,6 +188,7 @@ const handleSubmitSaved = () => {
   setSaveButtonText('Please Wait...')
   setDisabledSave(true)
   addSaved.mutate({
+        type: 'New Build',
         groupName: storeValues.groupName,
         city: storeValues.city,
         state: storeValues.state,

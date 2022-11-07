@@ -84,7 +84,8 @@ export default function Downloads() {
 
   return (
     <>
-          <p3 is="custom">PDFs will open in the browser. All other files will automatically download.</p3>
+          <p3 is="custom">Documents available for download have been divided into sections. If you are unable to find a document, please submit a support ticket requesting the document to be added.</p3>
+          <p3 is="custom">PDFs will open in the browser. All other files will be automatically download.</p3>
           <p3 is='custom' />
           <div>
           <TextField

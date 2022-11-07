@@ -23,7 +23,7 @@ export default function Queue() {
           <TableContainer className='table__font__css'>
             <Table>
               <TableHead>
-                <TableRow >
+                <TableRow>
                   <TableCell
                   width={'40%'}
                   >Group Name</TableCell>

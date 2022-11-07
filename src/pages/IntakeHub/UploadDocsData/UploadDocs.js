@@ -67,7 +67,8 @@ const handleFileSubmit = () => {
 
   return (
     <>    
-      <p3 is='custom'>Select your group from the list below.</p3>
+      <p3 is='custom'>All file types are accepted and multiple files can be uploaded at once. <br/> Select your group below and click on upload to begin. Once you are satisfied with the chosen files, click Submit Documents.</p3>
+      <p3 is='custom' />
       <div>
         <TextField
         variant='outlined'

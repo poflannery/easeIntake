@@ -5,8 +5,10 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { db } from '../../../firebase/config'
 import { setIntakeIndex } from '../../../redux/globalReducer'
-import { setNewBuildNavigation } from '../../../redux/navigationReducer'
+import { setNewBuildNavigation, setRenewalNavigation } from '../../../redux/navigationReducer'
 import { setAdditionalLifeValue, setAdminEmailValue, setAdminNameValue, setAllOtherDetailsValue, setBasicLifeCarriersValue, setBasicLifeDetailsValue, setBasicLifeNumbersValue, setbuildDeadlineValues, setCityValue, setDentalCarriersValue, setDentalDetailsValue, setDentalNumberValue, setEligibilityClassesValue, setExtraEligibilityValue, setFeinValue, setFinancialCarrierValue, setFinancialDetailValue, setFinancialNumberValue, setGroupNameValue, setInterestedPayrollValue, setLtdCarrierValue, setLtdDetailValue, setLtdNumberValue, setMedicalCarriersValue, setMedicalDetailsValue, setMedicalNumberValue, setMinimumHoursValue, setOpenEnrollmentValues, setOtherCarrierValue, setOtherDetailValue, setOtherNumberValue, setPayrollValue, setRatesValues, setSicCodeValue, setStateValue, setStdCarrierValue, setStdDetailValue, setStdNumberValue, setTerminationTypeValue, setVisionCarriersValue, setVisionDetailsValue, setVisionNumberValue, setVolLifeCarriersValue, setVolLifeDetailsValue, setVolLifeNumbersValue, setWaitingPeriodValue, setWebsiteValue, setZipValue } from '../../../redux/NewBuildValuesReducer'
+
+import { setCityRenewal, setGroupNameRenewal,setStateRenewal,setZipRenewal,setSicCodeRenewal,setFeinRenewal,setWebsiteRenewal,setAdminEmailRenewal,setAdminNameRenewal,setEligibilityChangeRenewal,setOtherPlanChangeRenewal,setOtherPlanDetailsRenewal,setRatesChangeDetailsRenewal,setBuildDeadlineRenewal,setEnrollmentDatesRenewal,setAdditionalNotesRenewal,setMedicalChangeRenewal,setMedicalChangeDetailsRenewal,setDentalChangeDetailsRenewal,setDentalChangeRenewal,setVisionChangeDetailsRenewal,setVisionChangeRenewal} from '../../../redux/renewalValuesReducer'
 
 export default function MySaved() {
 
@@ -31,7 +33,31 @@ const handleRetrieveIntake = () => {
   const doc = userData.docs[store.savedIntakeIndex].data()
 
   if (doc.type && doc.type === 'Renewal') {
-    dispatch()
+    dispatch(setGroupNameRenewal(doc.groupName))
+    dispatch(setCityRenewal(doc.city))
+    dispatch(setStateRenewal(doc.state))
+    dispatch(setZipRenewal(doc.zip))
+    dispatch(setSicCodeRenewal(doc.sicCode))
+    dispatch(setFeinRenewal(doc.fein))
+    dispatch(setWebsiteRenewal(doc.website))
+    dispatch(setAdminEmailRenewal(doc.adminEmail))
+    dispatch(setAdminNameRenewal(doc.adminName))
+    dispatch(setEligibilityChangeRenewal(doc.eligbilityChangeDetails))
+    dispatch(setOtherPlanChangeRenewal(doc.otherPlanChange))
+    dispatch(setOtherPlanDetailsRenewal(doc.otherChangeDetails))
+    dispatch(setRatesChangeDetailsRenewal(doc.rateChangeDetails))
+    dispatch(setBuildDeadlineRenewal(doc.buildDeadline))
+    dispatch(setEnrollmentDatesRenewal(doc.enrollmentDates))
+    dispatch(setAdditionalNotesRenewal(doc.additionalNotes))
+    dispatch(setMedicalChangeRenewal(doc.medicalChange))
+    dispatch(setMedicalChangeDetailsRenewal(doc.medicalChangeDetails))
+    dispatch(setDentalChangeRenewal(doc.dentalChange))
+    dispatch(setDentalChangeDetailsRenewal(doc.dentalChangeDetails))
+    dispatch(setVisionChangeRenewal(doc.visionChange))
+    dispatch(setVisionChangeDetailsRenewal(doc.visionChangeDetails))
+    setTimeout(() => {
+      dispatch(setRenewalNavigation())
+    },1500)
   }
   else {
   dispatch(setGroupNameValue(doc.groupName));
@@ -82,10 +108,9 @@ const handleRetrieveIntake = () => {
   dispatch(setOtherNumberValue(doc.otherPlanNumber));
   dispatch(setOtherCarrierValue(doc.otherPlanCarriers));
   dispatch(setOtherDetailValue(doc.otherDetails));
-  }
   setTimeout(() => {
     dispatch(setNewBuildNavigation())
-  },1500)
+  },1500)}
 }
 
 
@@ -97,8 +122,8 @@ const userData = userCollection.data
   return (
     <>
           <p1 is="custom"><b>Carefully review the following information:</b></p1>
-          <p3 is='custom'>The saved intake form is to be used to retrieve previously started and exited intakes. In order to properly save an intake, you must use the 'Save Build' button in the upper left corner. The form will save as many intakes as you wish. Please begin to retrieve a previously saved intake from below. If you wish to work on or submit a different caseworker's intake, please return to the homepage and return by selecting their name.</p3>
-          <p3 is='custom'>After retrieving a saved intake, you MUST save the build again in order to update the saved intake. Please remember to save your build.</p3>
+          <p3 is='custom'>The saved intake form is to be used to retrieve previously started and exited intakes. In order to properly save an intake, you must use the 'Save Build' button in the upper left corner of the build screens. The website will save as many intakes as you wish. Please begin to retrieve a previously saved intake from below. If you wish to work on or submit a different caseworker's intake, please return to the homepage and and enter the site using their name.</p3>
+          <p3 is='custom'>After retrieving a saved intake, you MUST save the build again in order to update the saved intake. Please remember to save your build before closing out your window or tab.</p3>
           <p3 is='custom'></p3>
           <TextField
           variant='outlined'

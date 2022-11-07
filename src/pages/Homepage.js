@@ -93,12 +93,12 @@ const getUsers = useFirestoreQuery(['users'], users, {
         onClose={handleClose}
         >
           <div className='modal'>
-            <h2>Choose Your Name</h2>
+            <h2>Select your Name</h2>
             <TextField
             variant='outlined'
             size='small'
             className='sidebar__left_search__input' 
-            label='Benefit Termination'
+            label='User'
             select
             onChange={(e) => setUser(e.target.value)}
             >
