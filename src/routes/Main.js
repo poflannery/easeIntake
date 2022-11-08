@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import AdminLayout from "../layout/AdminLayout";
 import AuthenticationLayout from "../layout/AuthenticationLayout";
 import SimpleLayout from "../layout/MainLayout";
@@ -13,7 +13,7 @@ import TicketSupportDesk from "../pages/TicketSupportDesk";
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 
 
-const routes = createBrowserRouter([
+const routes = createHashRouter([
     {
         path: '/dashboard',
         element: <SimpleLayout />,

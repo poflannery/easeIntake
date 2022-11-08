@@ -32,15 +32,15 @@ const [visionDetails, setVisionDetails] = useState(store.visionChangeDetails)
 const [submitting,setSubmitting] = useState(false)
 //methods
 const eraseMedicalDetails = () => {
-  if (checkedRef1.current.checked === true)
+  if (checkedRef1.current.checked === false)
   medicalRef.current.value = ''
 }
 const eraseDentalDetails = () => {
-  if (checkedRef2.current.checked === true)
+  if (checkedRef2.current.checked === false)
   dentalRef.current.value = ''
 }
 const eraseVisionDetails = () => {
-  if (checkedRef3.current.checked === true)
+  if (checkedRef3.current.checked === false)
   visionRef.current.value = ''
 }
 const handleSaveInformation = () => {

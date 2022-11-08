@@ -277,7 +277,7 @@ const handleSubmitSavedRenewal = () => {
         OtherPlanChangeDetails: storeRenewals.otherChangeDetails,
         rateChangeDetails: storeRenewals.rateChangeDetails,
         buildDeadline: storeRenewals.buildDeadline,
-        openEnrollment: storeRenewals.enrollmentDates,
+        enrollmentDates: storeRenewals.enrollmentDates,
         additionalNotes: storeRenewals.additionalNotes
   })
   setTimeout(() =>{
@@ -320,7 +320,7 @@ if (storeRenewals.groupName &&
       OtherPlanChangeDetails: storeRenewals.otherChangeDetails,
       rateChangeDetails: storeRenewals.rateChangeDetails,
       buildDeadline: storeRenewals.buildDeadline,
-      openEnrollment: storeRenewals.enrollmentDates,
+      enrollmentDates: storeRenewals.enrollmentDates,
       additionalNotes: storeRenewals.additionalNotes
     }).then(() => {
     addQueue.mutate({
@@ -329,7 +329,7 @@ if (storeRenewals.groupName &&
         submitted: new Date().toLocaleString(),
         status: 'Submitted - Pending Review'
       })
-    });
+    }).catch(error => console.log(error));
     setTimeout(() =>{
       navigate('/success', {state: {type: 'Submission', message: 'Congratulations! You have successfully submitted your intake form. You can review your build status in the live queue.'}})
   },1000)

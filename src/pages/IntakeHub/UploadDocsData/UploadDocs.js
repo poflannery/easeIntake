@@ -54,8 +54,8 @@ const handleFileSubmit = () => {
   })
 }
 
-  const submittedRef = query(collection(db,'submitted'));
-  const submittedQuery = useFirestoreQuery(['submitted'], submittedRef, {
+  const submittedRef = query(collection(db,'queue'));
+  const submittedQuery = useFirestoreQuery(['queue'], submittedRef, {
     subscribe: true,
     includeMetadataChanges: true
   })
