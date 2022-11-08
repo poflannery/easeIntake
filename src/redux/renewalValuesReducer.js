@@ -12,7 +12,7 @@ export const RenewalValues = createSlice({
         website: '',
         adminName: '',
         adminEmail: '',
-        eligbilityChangeDetails: 'blank',
+        eligbilityChangeDetails: '',
         otherPlanChange: false,
         otherChangeDetails: '',
         medicalChange: false,
