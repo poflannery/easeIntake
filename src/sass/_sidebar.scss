@@ -58,9 +58,32 @@
     }
     img{
         width: 50px;
+        
     }
 }
-
+.sidebar__nav-button-tutorial{
+        color: #fbbd04 !important;
+        width: 100%; 
+        height: 56px;
+        margin: 0;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        animation: flash infinite 5s;
+}
+@keyframes flash {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
+}
 .css--sidebar__grid-bottom{
     grid-area: sidebar__bottom;
     display: flex;
