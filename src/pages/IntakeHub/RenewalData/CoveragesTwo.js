@@ -25,7 +25,7 @@ const eraseOtherDetails = () => {
 }
 const handleSaveInformation = () => {
   setSubmitting(true)
-  dispatch(setOtherPlanChangeRenewal(checkedRef.current.checked))
+  dispatch(setOtherPlanChangeRenewal(otherChecked))
   dispatch(setOtherPlanDetailsRenewal(details))
   setTimeout(() => {
     setSubmitting(false)

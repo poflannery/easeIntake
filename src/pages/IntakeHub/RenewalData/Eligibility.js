@@ -36,7 +36,7 @@ const savedNotice = () => {
 // return \\
   return (
     <>
-          <p3 is="custom">Changes to eligibility (classes, rates, etc.)</p3>
+          <p3 is="custom">Changes to eligibility (detail any changes to classes and the associated updates)</p3>
           <TextField
           variant='outlined'
           size='small'

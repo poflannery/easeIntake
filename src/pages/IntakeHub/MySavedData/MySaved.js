@@ -61,54 +61,54 @@ const handleRetrieveIntake = () => {
     },1500)
   }
   else {
-  dispatch(setGroupNameValue(doc.groupName));
-  dispatch(setCityValue(doc.city));
-  dispatch(setStateValue(doc.state));
-  dispatch(setZipValue(doc.zip));
-  dispatch(setSicCodeValue(doc.sicCode));
-  dispatch(setFeinValue(doc.fein));
-  dispatch(setWebsiteValue(doc.website));
-  dispatch(setAdminNameValue(doc.adminName));
-  dispatch(setAdminEmailValue(doc.adminEmail));
-  dispatch(setEligibilityClassesValue(doc.eligibilityClasses));
-  dispatch(setMinimumHoursValue(doc.minimumHours));
-  dispatch(setTerminationTypeValue(doc.terminationType));
-  dispatch(setWaitingPeriodValue(doc.waitingPeriod));
-  dispatch(setPayrollValue(doc.payroll));
-  dispatch(setInterestedPayrollValue(doc.interestedPayroll));
-  dispatch(setExtraEligibilityValue(doc.extraEligibility));
-  dispatch(setVisionCarriersValue(doc.visionPlanCarriers));
-  dispatch(setVisionNumberValue(doc.visionPlanNumber));
-  dispatch(setVisionDetailsValue(doc.visionDetails));
-  dispatch(setDentalNumberValue(doc.dentalPlanNumber));
-  dispatch(setDentalCarriersValue(doc.dentalPlanCarriers));
-  dispatch(setDentalDetailsValue(doc.dentalDetails));
-  dispatch(setMedicalNumberValue(doc.medicalPlanNumber));
-  dispatch(setMedicalCarriersValue(doc.medicalPlanCarriers));
-  dispatch(setMedicalDetailsValue(doc.medicalDetails));
-  dispatch(setBasicLifeNumbersValue(doc.basicLifePlanNumber));
-  dispatch(setBasicLifeDetailsValue(doc.basicLifeDetails));
-  dispatch(setBasicLifeCarriersValue(doc.basicLifePlanCarriers));
-  dispatch(setVolLifeNumbersValue(doc.volLifePlanNumber));
-  dispatch(setVolLifeCarriersValue(doc.volLifePlanCarriers));
-  dispatch(setVolLifeDetailsValue(doc.volLifeDetails));
-  dispatch(setStdNumberValue(doc.stdPlanNumber));
-  dispatch(setStdCarrierValue(doc.stdPlanCarriers));
-  dispatch(setStdDetailValue(doc.stdDetails));
-  dispatch(setLtdNumberValue(doc.ltdPlanNumber));
-  dispatch(setLtdCarrierValue(doc.ltdPlanCarriers));
-  dispatch(setLtdDetailValue(doc.ltdDetails));
-  dispatch(setAdditionalLifeValue(doc.additionalLifeDetails));
-  dispatch(setRatesValues(doc.rates));
-  dispatch(setbuildDeadlineValues(doc.buildDeadline));
-  dispatch(setOpenEnrollmentValues(doc.openEnrollment));
-  dispatch(setAllOtherDetailsValue(doc.allOtherDetails));
-  dispatch(setFinancialNumberValue(doc.financialPlanNumber));
-  dispatch(setFinancialCarrierValue(doc.financialPlanCarriers));
-  dispatch(setFinancialDetailValue(doc.financialDetails));
-  dispatch(setOtherNumberValue(doc.otherPlanNumber));
-  dispatch(setOtherCarrierValue(doc.otherPlanCarriers));
-  dispatch(setOtherDetailValue(doc.otherDetails));
+  dispatch(setGroupNameValue(doc.groupName === undefined ? '' : doc.groupName));
+  dispatch(setCityValue(doc.city === undefined ? '' : doc.city));
+  dispatch(setStateValue(doc.state === undefined ? '' : doc.state));
+  dispatch(setZipValue(doc.zip === undefined ? '' : doc.zip));
+  dispatch(setSicCodeValue(doc.sicCode === undefined ? '' : doc.sicCode));
+  dispatch(setFeinValue(doc.fein === undefined ? '' : doc.fein));
+  dispatch(setWebsiteValue(doc.website === undefined ? '' : doc.website));
+  dispatch(setAdminNameValue(doc.adminName === undefined ? '' : doc.adminName));
+  dispatch(setAdminEmailValue(doc.adminEmail === undefined ? '' : doc.adminEmail));
+  dispatch(setEligibilityClassesValue(doc.eligibilityClasses === undefined ? '' : doc.eligibilityClasses));
+  dispatch(setMinimumHoursValue(doc.minimumHours === undefined ? '' : doc.minimumHours));
+  dispatch(setTerminationTypeValue(doc.terminationType === undefined ? '' : doc.terminationType));
+  dispatch(setWaitingPeriodValue(doc.waitingPeriod === undefined ? '' : doc.waitingPeriod));
+  dispatch(setPayrollValue(doc.payroll === undefined ? '' : doc.payroll));
+  dispatch(setInterestedPayrollValue(doc.interestedPayroll === undefined ? '' : doc.interestedPayroll));
+  dispatch(setExtraEligibilityValue(doc.extraEligibility === undefined ? '' : doc.extraEligibility));
+  dispatch(setVisionCarriersValue(doc.visionPlanCarriers === undefined ? '' : doc.visionPlanCarriers));
+  dispatch(setVisionNumberValue(doc.visionPlanNumber === undefined ? '' : doc.visionPlanNumber));
+  dispatch(setVisionDetailsValue(doc.visionDetails === undefined ? '' : doc.visionDetails));
+  dispatch(setDentalNumberValue(doc.dentalPlanNumber === undefined ? '' : doc.dentalPlanNumber));
+  dispatch(setDentalCarriersValue(doc.dentalPlanCarriers === undefined ? '' : doc.dentalPlanCarriers));
+  dispatch(setDentalDetailsValue(doc.dentalDetails === undefined ? '' : doc.dentalDetails));
+  dispatch(setMedicalNumberValue(doc.medicalPlanNumber === undefined ? '' : doc.medicalPlanNumber));
+  dispatch(setMedicalCarriersValue(doc.medicalPlanCarriers === undefined ? '' : doc.medicalPlanCarriers));
+  dispatch(setMedicalDetailsValue(doc.medicalDetails === undefined ? '' : doc.medicalDetails));
+  dispatch(setBasicLifeNumbersValue(doc.basicLifePlanNumber === undefined ? '' : doc.basicLifePlanNumber));
+  dispatch(setBasicLifeDetailsValue(doc.basicLifeDetails === undefined ? '' : doc.basicLifeDetails));
+  dispatch(setBasicLifeCarriersValue(doc.basicLifePlanCarriers === undefined ? '' : doc.basicLifePlanCarriers));
+  dispatch(setVolLifeNumbersValue(doc.volLifePlanNumber === undefined ? '' : doc.volLifePlanNumber));
+  dispatch(setVolLifeCarriersValue(doc.volLifePlanCarriers === undefined ? '' : doc.volLifePlanCarriers));
+  dispatch(setVolLifeDetailsValue(doc.volLifeDetails === undefined ? '' : doc.volLifeDetails));
+  dispatch(setStdNumberValue(doc.stdPlanNumber === undefined ? '' : doc.stdPlanNumber));
+  dispatch(setStdCarrierValue(doc.stdPlanCarriers === undefined ? '' : doc.stdPlanCarriers));
+  dispatch(setStdDetailValue(doc.stdDetails === undefined ? '' : doc.stdDetails));
+  dispatch(setLtdNumberValue(doc.ltdPlanNumber === undefined ? '' : doc.ltdPlanNumber));
+  dispatch(setLtdCarrierValue(doc.ltdPlanCarriers === undefined ? '' : doc.ltdPlanCarriers));
+  dispatch(setLtdDetailValue(doc.ltdDetails === undefined ? '' : doc.ltdDetails));
+  dispatch(setAdditionalLifeValue(doc.additionalLifeDetails === undefined ? '' : doc.additionalLifeDetails));
+  dispatch(setRatesValues(doc.rates === undefined ? '' : doc.rates));
+  dispatch(setbuildDeadlineValues(doc.buildDeadline === undefined ? '' : doc.buildDeadline));
+  dispatch(setOpenEnrollmentValues(doc.openEnrollment === undefined ? '' : doc.openEnrollment));
+  dispatch(setAllOtherDetailsValue(doc.allOtherDetails === undefined ? '' : doc.allOtherDetails));
+  dispatch(setFinancialNumberValue(doc.financialPlanNumber === undefined ? '' : doc.financialPlanNumber));
+  dispatch(setFinancialCarrierValue(doc.financialPlanCarriers === undefined ? '' : doc.financialPlanCarriers));
+  dispatch(setFinancialDetailValue(doc.financialDetails === undefined ? '' : doc.financialDetails));
+  dispatch(setOtherNumberValue(doc.otherPlanNumber === undefined ? '' : doc.otherPlanNumber));
+  dispatch(setOtherCarrierValue(doc.otherPlanCarriers === undefined ? '' : doc.otherPlanCarriers));
+  dispatch(setOtherDetailValue(doc.otherDetails === undefined ? '' : doc.otherDetails));
   setTimeout(() => {
     dispatch(setNewBuildNavigation())
   },1500)}
@@ -137,7 +137,7 @@ const userData = userCollection.data
             {userData.docs.map((doc,i) => {
               const data = doc.data();
               return (
-                <MenuItem index={i} value={data.groupName} onClick={handleUserSelect}>{data.groupName}</MenuItem>
+                <MenuItem index={i} value={data.groupName} onClick={handleUserSelect} key={i} >{data.groupName}</MenuItem>
               )
             })}
           </TextField>
