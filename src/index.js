@@ -12,7 +12,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 
 
 
-
 let persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -48,7 +48,7 @@ const handleSaveInformation = () => {
   dispatch(setTerminationTypeValue(benefitTermination))
   dispatch(setWaitingPeriodValue(waitingPeriod))
   dispatch(setPayrollValue(payroll))
-  dispatch(setInterestedPayrollValue(interested))
+  dispatch(setInterestedPayrollValue(interested === undefined ? '' : interested))
   dispatch(setExtraEligibilityValue(extraEligibility))
   setTimeout(() => {
     console.log(store)

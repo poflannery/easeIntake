@@ -29,7 +29,7 @@ const handleSaveInformation = () => {
   setSubmitting(true);
   dispatch(setOtherNumberValue(number));
   dispatch(setOtherCarrierValue(carrier));
-  dispatch(setOtherDetailValue(detail));
+  dispatch(setOtherDetailValue(detail === undefined ? '' : detail));
 
   setTimeout(() => {
     console.log(store)
