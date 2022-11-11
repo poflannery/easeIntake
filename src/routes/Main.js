@@ -5,6 +5,7 @@ import SimpleLayout from "../layout/MainLayout";
 import Authentication from "../pages/AdminDashboard/Authentication";
 import TicketLanding from "../pages/AdminDashboard/TicketLanding";
 import Users from "../pages/AdminDashboard/Users";
+import Error404 from "../pages/Error404";
 import Homepage from "../pages/Homepage";
 import IntakeHub from "../pages/IntakeHub";
 import Confirmation from "../pages/IntakeHub/Confirmation";
@@ -81,6 +82,10 @@ const routes = createHashRouter([
             }
 
         ]
+    },
+    {
+        path: '*',
+        element: <Error404 />
     }
 ]);
 
